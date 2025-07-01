@@ -15,7 +15,7 @@ include 'includes/header.php';
     <div class="container">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Zorica Vucic, l'Architecte de votre épanouissement professionnel</h1>
+                <h1>Zorica Vucic, l'architecte de votre épanouissement professionnel</h1>
                 <p class="subtitle">Aligner qui vous êtes avec ce que vous montrez. Et vous offrir l'espace pour faire éclore votre réussite.</p>
                 <div class="hero-buttons">
                     <a href="/contact" class="cta-button">
