@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accompagnements - Zorica Vucic | Coaching, Formation & Espace Professionnel</title>
+    <meta name="description" content="Découvrez les 3 piliers d'accompagnement de Zorica Vucic : Se Révéler (coaching), Se Connecter (formation), Éclore (espace professionnel) à Épinal.">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #1B4D4B;
+            --secondary-gold: #D89C34;
+            --accent-coral: #EF6C61;
+            --bg-main: #F8F2EC;
+            --text-grey: #5E5E5E;
+            --neutral-light: #FDFBF9;
+            --white: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, var(--primary-teal) 0%, #2A6B68 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-gold) 0%, #E6B04A 100%);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-grey);
+            background: var(--bg-main);
+        }
+
+        .serif {
+            font-family: 'Merriweather', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(253, 251, 249, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(27, 77, 75, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: var(--secondary-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--primary-teal);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-gold);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient-secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-teal);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .accompagnements-hero {
+            background: linear-gradient(135deg, rgba(216, 156, 52, 0.08) 0%, rgba(27, 77, 75, 0.12) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accompagnements-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23EF6C61" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .accompagnements-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .accompagnements-hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 3.5rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .accompagnements-hero .subtitle {
+            font-size: 1.4rem;
+            color: var(--text-grey);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            font-style: italic;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        /* Main Services Section */
+        .main-services {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .services-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services-intro h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .services-intro p {
+            font-size: 1.2rem;
+            color: var(--text-grey);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: var(--neutral-light);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(216, 156, 52, 0.1),
+                transparent
+            );
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: var(--secondary-gold);
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(27, 77, 75, 0.3);
+        }
+
+        .service-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .service-features i {
+            color: var(--secondary-gold);
+            width: 20px;
+        }
+
+        .service-cta {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(216, 156, 52, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(216, 156, 52, 0.4);
+            gap: 1rem;
+        }
+
+        /* Detailed Service Sections */
+        .service-detail {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .service-detail:nth-child(even) {
+            background: var(--neutral-light);
+        }
+
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .service-visual {
+            position: relative;
+        }
+
+        .service-visual::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-secondary);
+            border-radius: 20px;
+            z-index: -1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        .visual-placeholder {
+            width: 100%;
+            height: 350px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .visual-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-info h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-emoji {
+            font-size: 2rem;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.1); filter: brightness(1.2); }
+        }
+
+        .service-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-coral);
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--primary-teal);
+            font-style: italic;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            font-weight: 500;
+        }
+
+        .benefit-item i {
+            color: var(--secondary-gold);
+            width: 20px;
+        }
+
+        /* Custom CTA Section */
+        .custom-cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, #2A6B68 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .custom-cta h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: var(--secondary-gold);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(216, 156, 52, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(216, 156, 52, 0.4);
+            gap: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .accompagnements-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-intro h2 {
+                font-size: 2.2rem;
+            }
+
+            .service-info h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Zorica.pro</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="#" style="color: var(--secondary-gold);">Accompagnements</a></li>
+                <li><a href="#communaute">La Communauté</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="accompagnements-hero">
+        <div class="container">
+            <h1>Mes Accompagnements</h1>
+            <p class="subtitle">✨ Accompagner, c'est créer l'espace pour que l'élan puisse émerger</p>
+            <div class="intro-text">
+                <p>Chez <strong>Zorica.pro</strong>, l'accompagnement est au cœur de tout.<br>
+                Qu'il s'agisse de coaching individuel, de formation en équipe ou d'un lieu pour poser ses idées et son énergie… tout part de <strong>vous</strong>. De votre moment. De votre besoin. De votre dynamique.</p>
+                <br>
+                <p style="color: var(--secondary-gold); font-weight: 600; font-size: 1.3rem;">Trois portes d'entrée, une seule intention : vous aider à évoluer avec clarté, cohérence et impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services Overview -->
+    <section class="main-services">
+        <div class="container">
+            <div class="services-intro">
+                <h2>Les 3 Piliers de Votre Transformation</h2>
+                <p>Chaque accompagnement est pensé pour répondre à un besoin spécifique, tout en s'inscrivant dans une démarche globale de développement professionnel et personnel.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Se Révéler</h3>
+                    <p class="service-description">Coaching personnalisé pour découvrir et affirmer votre identité professionnelle authentique.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Séances individuelles sur-mesure</li>
+                        <li><i class="fas fa-check"></i> Clarification de vision et projet</li>
+                        <li><i class="fas fa-check"></i> Développement de posture</li>
+                        <li><i class="fas fa-check"></i> Gestion des transitions</li>
+                    </ul>
+                    <a href="#coaching-detail" class="service-cta">
+                        Découvrir le coaching <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Se Connecter</h3>
+                    <p class="service-description">Formation et animation de réseau pour développer vos connexions professionnelles et créer des opportunités durables.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Formations inter & intra-entreprises</li>
+                        <li><i class="fas fa-check"></i> Communication interpersonnelle</li>
+                        <li><i class="fas fa-check"></i> Leadership et management</li>
+                        <li><i class="fas fa-check"></i> Animation d'équipes</li>
+                    </ul>
+                    <a href="#formation-detail" class="service-cta">
+                        Explorer les formations <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Éclore</h3>
+                    <p class="service-description">Espace de travail professionnel à Épinal, conçu pour favoriser votre productivité et votre épanouissement.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Bureaux modulables</li>
+                        <li><i class="fas fa-check"></i> Salles de réunion équipées</li>
+                        <li><i class="fas fa-check"></i> Espace formation & atelier</li>
+                        <li><i class="fas fa-check"></i> Ambiance inspirante</li>
+                    </ul>
+                    <a href="#espace-detail" class="service-cta">
+                        Visiter l'espace <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaching Detail Section -->
+    <section class="service-detail" id="coaching-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-user-friends"></i>
+                        <div>
+                            <strong>Séance de coaching</strong><br>
+                            Un accompagnement personnalisé<br>
+                            dans un cadre bienveillant
+                        </div>
+                    </div>
+                </div>
+                <div class="service-info">
+                    <h2><span class="service-emoji">🌀</span> Coaching - Se Révéler</h2>
+                    
+                    <p><strong>Pour qui ?</strong><br>
+                    Les professionnel·les, entrepreneur·es, cadres ou porteurs de projet en quête de changement, de fluidité, de renouveau.</p>
+
+                    <div class="highlight-box">
+                        <p>Un espace confidentiel pour clarifier votre vision, travailler votre posture et ancrer vos prises de conscience dans l'action concrète.</p>
+                    </div>
+
+                    <p><strong>Pourquoi choisir ce coaching ?</strong></p>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Clarifier une vision ou un projet</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-compass"></i>
+                            <span>Prendre une décision importante</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-cloud-sun"></i>
+                            <span>Dépasser une période de flou</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-crown"></i>
+                            <span>Développer sa posture de leader</span>
+                        </div>
+                    </div>
+
+                    <p><strong>Comment ça marche ?</strong><br>
+                    Des séances individuelles (en présentiel à l'Espace Éclore ou à distance), un cadre confidentiel et bienveillant, une progression sur-mesure, des outils concrets pour ancrer les prises de conscience dans l'action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formation Detail Section -->
+    <section class="service-detail" id="formation-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2><span class="service-emoji">📚</span> Formation - Se Connecter</h2>
+                    
+                    <p><strong>Pour qui ?</strong><br>
+                    Les équipes, les collectifs, les entreprises qui veulent grandir ensemble, faire évoluer leurs pratiques, renforcer la qualité relationnelle et managériale.</p>
+
+                    <div class="highlight-box">
+                        <p>Des contenus structurés, une animation vivante, une pédagogie toujours tournée vers le transfert dans le réel.</p>
+                    </div>
+
+                    <p><strong>Thématiques possibles :</strong></p>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication interpersonnelle</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-chess-king"></i>
+                            <span>Leadership et posture managériale</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Intelligence émotionnelle</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Coopération et dynamique d'équipe</span>
+                        </div>
+                    </div>
+
+                    <p><strong>Pédagogie :</strong><br>
+                    Une approche interactive et engageante, mêlant apports théoriques, exercices pratiques, mises en situation et temps d'échange. L'objectif : que chaque participant·e reparte avec des outils directement applicables.</p>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-users-cog"></i>
+                        <div>
+                            <strong>Formation en équipe</strong><br>
+                            Des outils concrets pour<br>
+                            transformer vos pratiques
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espace Detail Section -->
+    <section class="service-detail" id="espace-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-home"></i>
+                        <div>
+                            <strong>Espace Éclore</strong><br>
+                            26 Rue Bel Air, Épinal<br>
+                            Un lieu inspirant pour vos projets
+                        </div>
+                    </div>
+                </div>
+                <div class="service-info">
+                    <h2><span class="service-emoji">🏛️</span> Espace Éclore - Un lieu pour grandir</h2>
+                    
+                    <p><strong>Un espace pour travailler… et respirer.</strong><br>
+                    À Épinal, <strong>l'Espace Éclore</strong> est un lieu pensé pour accueillir vos activités professionnelles dans les meilleures conditions.</p>
+
+                    <div class="highlight-box">
+                        <p>Un espace lumineux, chaleureux, fonctionnel, modulable – et inspirant. Idéal pour créer du lien, de la clarté, du mouvement.</p>
+                    </div>
+
+                    <p><strong>Parfait pour :</strong></p>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Séances individuelles</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Réunions confidentielles</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>Formations petit groupe</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Ateliers créatifs</span>
+                        </div>
+                    </div>
+
+                    <p><strong>Équipements :</strong><br>
+                    Espaces modulables, équipements audiovisuels, mobilier confortable, coin détente, parking disponible. Tout est pensé pour favoriser concentration, créativité et bien-être.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom CTA Section -->
+    <section class="custom-cta">
+        <div class="container">
+            <h2><span style="font-size: 2rem;">🌱</span> Besoin d'un accompagnement sur-mesure ?</h2>
+            <p>Vous ne rentrez pas dans une case ? Parfait.<br>
+            Parlons-en, et construisons ensemble un format qui vous ressemble.</p>
+            <a href="index.html#contact" class="cta-button">
+                <i class="fas fa-phone"></i>
+                Me contacter pour échanger
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--primary-teal); color: white; padding: 3rem 0 1rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="font-family: 'Merriweather', serif; margin-bottom: 1rem; color: var(--secondary-gold);">Zorica Vucic</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Architecte de votre épanouissement professionnel</p>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Cabinet A to Z Conseil & Coaching</p>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Espace Éclore - Épinal</p>
+                </div>
+                <div>
+                    <h3 style="font-family: 'Merriweather', serif; margin-bottom: 1rem; color: var(--secondary-gold);">Services</h3>
+                    <a href="#coaching-detail" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; display: block; margin-bottom: 0.5rem;">Coaching - Se Révéler</a>
+                    <a href="#formation-detail" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; display: block; margin-bottom: 0.5rem;">Formation - Se Connecter</a>
+                    <a href="#espace-detail" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; display: block; margin-bottom: 0.5rem;">Espace Éclore</a>
+                </div>
+                <div>
+                    <h3 style="font-family: 'Merriweather', serif; margin-bottom: 1rem; color: var(--secondary-gold);">Contact</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">📧 zorica.vucic@a-to-z.fr</p>
+                    <p style="color: rgba(255, 255, 255, 0.8);">📞 07 54 83 55 83</p>
+                    <p style="color: rgba(255, 255, 255, 0.8);">📍 26 Rue Bel Air, 88000 Épinal</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem; text-align: center; color: rgba(255, 255, 255, 0.6);">
+                <p>&copy; 2024 Zorica.pro - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(253, 251, 249, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(27, 77, 75, 0.15)';
+            } else {
+                header.style.background = 'rgba(253, 251, 249, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(27, 77, 75, 0.1)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .service-content').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
