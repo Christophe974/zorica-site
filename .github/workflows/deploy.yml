@@ -26,7 +26,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          cd /home/votre-user/www/
+          cd ~/www/
           git pull origin main
-          # Optionnel: redémarrer services si nécessaire
-          # sudo systemctl reload php8.2-fpm
+          echo "Deployment completed successfully!"
