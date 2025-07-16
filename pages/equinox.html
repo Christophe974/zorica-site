@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours EK!NOX - Programme de transformation pour dirigeants | Zorica.pro</title>
+    <meta name="description" content="Parcours EK!NOX - Programme de transformation intérieure et d'alignement stratégique pour dirigeants. 3 jours immersifs + 12 mois de suivi. Inscriptions ouvertes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ========================================
+           VARIABLES CSS - CHARTE ZORICA
+        ======================================== */
+
+        :root {
+            /* Couleurs principales */
+            --primary-teal: #1B4D4B;
+            --secondary-gold: #D89C34;
+            --accent-coral: #EF6C61;
+            --neutral-light: #F8F6F3;
+            --white: #FFFFFF;
+            --gray-light: #E5E5E5;
+            --gray-medium: #B8B8B8;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --gold-dark: #B8831F;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-teal) 0%, #2A5D5A 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-gold) 0%, #E6A73D 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-coral) 0%, #F28B82 100%);
+            --gradient-hero: linear-gradient(135deg, var(--white) 0%, var(--neutral-light) 100%);
+            --gradient-soft: linear-gradient(135deg, rgba(216, 156, 52, 0.1) 0%, rgba(27, 77, 75, 0.1) 100%);
+
+            /* Typographie */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-secondary: 'Playfair Display', serif;
+
+            /* Espacements */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.75rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
+
+            /* Rayons */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
+
+            /* Ombres */
+            --shadow-light: 0 4px 20px rgba(27, 77, 75, 0.1);
+            --shadow-medium: 0 8px 30px rgba(27, 77, 75, 0.15);
+            --shadow-heavy: 0 15px 50px rgba(27, 77, 75, 0.2);
+            --shadow-glow: 0 0 30px rgba(216, 156, 52, 0.3);
+
+            /* Transitions */
+            --transition-normal: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+            --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* ========================================
+           RESET & BASE STYLES
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* ========================================
+           ANIMATIONS - STYLE ZORICA
+        ======================================== */
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* ========================================
+           BOUTONS - STYLE ZORICA
+        ======================================== */
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition-spring);
+            box-shadow: var(--shadow-light);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition-slow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            color: var(--primary-teal);
+            border: 2px solid var(--primary-teal);
+        }
+
+        .cta-button.outline:hover {
+            background: var(--primary-teal);
+            color: var(--white);
+        }
+
+        .cta-button.gold {
+            background: var(--gradient-secondary);
+        }
+
+        .cta-button.coral {
+            background: var(--gradient-accent);
+        }
+
+        /* ========================================
+           HEADER - STYLE ZORICA
+        ======================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: var(--spacing-md) 0;
+            transition: var(--transition-normal);
+            border-bottom: 1px solid rgba(27, 77, 75, 0.1);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-xl);
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: var(--transition-normal);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-gold);
+        }
+
+        /* ========================================
+           HERO SECTION - STYLE ZORICA
+        ======================================== */
+
+        .hero {
+            background: var(--gradient-hero);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(216, 156, 52, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(27, 77, 75, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(239, 108, 97, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Image - Style Zorica */
+        .hero-visual {
+            margin: var(--spacing-xl) 0;
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .image-container {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--radius-xl);
+            z-index: -1;
+            animation: glow-pulse 4s ease-in-out infinite;
+            filter: blur(1px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            transition: var(--transition-slow);
+            border: 3px solid rgba(255,255,255,0.3);
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.03) rotate(1deg);
+            box-shadow: 0 30px 60px rgba(27, 77, 75, 0.4);
+        }
+
+        /* Effet brillant sur l'image */
+        .image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.8),
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            border-radius: var(--radius-xl);
+            animation: shine-sweep 4s ease-in-out infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes shine-sweep {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        /* Particules scintillantes */
+        .sparkles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--secondary-gold);
+            border-radius: 50%;
+            animation: sparkle-float 3s ease-in-out infinite;
+            box-shadow: 0 0 10px var(--secondary-gold);
+        }
+
+        .sparkle:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+            background: var(--accent-coral);
+            box-shadow: 0 0 10px var(--accent-coral);
+        }
+
+        .sparkle:nth-child(2) {
+            top: 65%;
+            left: 85%;
+            animation-delay: 0.8s;
+            background: var(--secondary-gold);
+            box-shadow: 0 0 10px var(--secondary-gold);
+        }
+
+        .sparkle:nth-child(3) {
+            top: 25%;
+            left: 75%;
+            animation-delay: 1.6s;
+            background: var(--primary-teal);
+            box-shadow: 0 0 10px var(--primary-teal);
+        }
+
+        .sparkle:nth-child(4) {
+            top: 85%;
+            left: 15%;
+            animation-delay: 2.4s;
+            background: var(--accent-coral);
+            box-shadow: 0 0 10px var(--accent-coral);
+        }
+
+        @keyframes sparkle-float {
+            0%, 100% { 
+                opacity: 0;
+                transform: scale(0) translateY(0px) rotate(0deg);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.2) translateY(-15px) rotate(180deg);
+            }
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-secondary);
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary-teal);
+            animation: fadeInUp 1s ease 0.3s both;
+            position: relative;
+        }
+
+        .hero-text h1::after {
+            content: '⚡';
+            position: absolute;
+            top: -20px;
+            right: -40px;
+            font-size: 2rem;
+            animation: rotate 3s linear infinite;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 400;
+            line-height: 1.4;
+            animation: fadeInUp 1s ease 0.6s both;
+            max-width: 800px;
+        }
+
+        .hero-text .description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xxl);
+            animation: fadeInUp 1s ease 0.9s both;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease 1.2s both;
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .hero-buttons .cta-button {
+            min-width: 280px;
+            font-size: 1.1rem;
+            padding: var(--spacing-lg) var(--spacing-xl);
+        }
+
+        .hero-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xxl);
+            box-shadow: var(--shadow-heavy);
+            border: 2px solid rgba(216, 156, 52, 0.2);
+            text-align: center;
+            transition: var(--transition-spring);
+            animation: fadeInUp 1s ease 1.5s both;
+            position: relative;
+            overflow: hidden;
+            margin-top: var(--spacing-xl);
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+        }
+
+        .hero-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .dates-container {
+            background: var(--gradient-soft);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .dates-title {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .date-item {
+            font-size: 1.1rem;
+            margin: var(--spacing-sm) 0;
+            color: var(--text-secondary);
+        }
+
+        .date-item strong {
+            color: var(--secondary-gold);
+        }
+
+        .hero-card .info-text {
+            font-weight: 600;
+            color: var(--primary-teal);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-card .sub-info {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* ========================================
+           SECTIONS - STYLE ZORICA
+        ======================================== */
+
+        .section {
+            padding: var(--spacing-xxl) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-xxl);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title h2 {
+            font-family: var(--font-secondary);
+            font-size: 3rem;
+            color: var(--primary-teal);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           BENEFITS SECTION - STYLE ZORICA
+        ======================================== */
+
+        .benefits {
+            background: var(--neutral-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(27, 77, 75, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(216, 156, 52, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: var(--spacing-xl);
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: var(--spacing-xxl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-spring);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: var(--transition-slow);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--secondary-gold);
+        }
+
+        .benefit-card:hover::before {
+            left: 100%;
+        }
+
+        .benefit-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto var(--spacing-lg);
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            transition: var(--transition-spring);
+            box-shadow: var(--shadow-medium);
+            border: 3px solid rgba(255,255,255,0.3);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .benefit-card h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            color: var(--primary-teal);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .benefit-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* ========================================
+           PROGRAM SECTION - STYLE ZORICA
+        ======================================== */
+
+        .program {
+            background: var(--white);
+        }
+
+        .program-days {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .day-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-spring);
+            border: 2px solid rgba(216, 156, 52, 0.1);
+        }
+
+        .day-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .day-header {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .day-number {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .day-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .day-content {
+            padding: var(--spacing-xxl);
+        }
+
+        .day-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .day-activities {
+            list-style: none;
+        }
+
+        .day-activities li {
+            padding: var(--spacing-sm) 0;
+            position: relative;
+            padding-left: var(--spacing-lg);
+            color: var(--text-secondary);
+        }
+
+        .day-activities li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-gold);
+            font-weight: bold;
+        }
+
+        /* ========================================
+           PRICING SECTION - STYLE ZORICA
+        ======================================== */
+
+        .pricing {
+            background: var(--gradient-primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(216, 156, 52, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(239, 108, 97, 0.2) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .pricing .section-title,
+        .pricing .section-title h2,
+        .pricing .section-title p {
+            color: var(--white);
+        }
+
+        .pricing .section-title h2::after {
+            background: var(--secondary-gold);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xxl);
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            color: var(--text-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xxl);
+            text-align: center;
+            position: relative;
+            transition: var(--transition-spring);
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--secondary-gold);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::after {
+            content: 'POPULAIRE';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-gold);
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .pricing-location {
+            font-family: var(--font-secondary);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary-gold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .early-bird {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-full);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            display: inline-block;
+        }
+
+        .pricing-details {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-includes {
+            background: var(--gradient-soft);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-includes h4 {
+            color: var(--primary-teal);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .pricing-includes p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           TESTIMONIAL SECTION - STYLE ZORICA
+        ======================================== */
+
+        .testimonial {
+            background: var(--neutral-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(180deg, transparent 0%, rgba(27, 77, 75, 0.05) 100%);
+            z-index: 1;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-quote {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary-gold);
+            position: absolute;
+            top: -20px;
+            font-family: var(--font-secondary);
+            opacity: 0.7;
+        }
+
+        .testimonial-quote::before {
+            left: -40px;
+        }
+
+        .testimonial-quote::after {
+            right: -40px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-teal);
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .testimonial-title {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           FINAL CTA SECTION - STYLE ZORICA
+        ======================================== */
+
+        .final-cta {
+            background: var(--gradient-accent);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 40%);
+            z-index: 1;
+        }
+
+        .final-cta .section-title,
+        .final-cta .section-title h2,
+        .final-cta .section-title p {
+            color: var(--white);
+        }
+
+        .final-cta .section-title h2::after {
+            background: var(--white);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-secondary);
+            font-size: 2.8rem;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .cta-content h2::before {
+            content: '🚀';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .cta-content p {
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-xxl);
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-xl);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .cta-button {
+            min-width: 300px;
+            font-size: 1.2rem;
+            padding: var(--spacing-lg) var(--spacing-xxl);
+            background: var(--white);
+            color: var(--primary-teal);
+        }
+
+        .cta-buttons .cta-button:hover {
+            background: var(--secondary-gold);
+            color: var(--white);
+        }
+
+        .contact-info {
+            margin-top: var(--spacing-xxl);
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN - STYLE ZORICA
+        ======================================== */
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-text h1::after {
+                right: -20px;
+                font-size: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .cta-button {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .hero-card {
+                padding: var(--spacing-xl);
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-days {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .cta-button {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .testimonial-quote::before,
+            .testimonial-quote::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .benefit-card,
+            .day-card,
+            .pricing-card {
+                padding: var(--spacing-lg);
+            }
+
+            .hero-card {
+                margin-top: var(--spacing-lg);
+            }
+        }
+
+        /* ========================================
+           ACCESSIBILITY & PERFORMANCE
+        ======================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Optimisation pour les animations */
+        .benefit-card,
+        .day-card,
+        .pricing-card,
+        .hero-card {
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Zorica.pro</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#programme">Programme</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Parcours EK!NOX</h1>
+                    <p class="subtitle">Votre transformation intérieure pour un leadership aligné</p>
+                    <p class="description">
+                        Un programme d'exception pour dirigeants, cadres et entrepreneurs qui veulent créer un équilibre durable entre performance et épanouissement personnel.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="cta-button gold">
+                            <i class="fas fa-calendar-check"></i>
+                            Je pose ma candidature
+                        </a>
+                        <a href="#programme" class="cta-button outline">
+                            <i class="fas fa-arrow-down"></i>
+                            Découvrir le programme
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="https://zorica.pro/images/zorica.jpg" alt="Zorica Vucic - Coach professionnelle" loading="eager">
+                            <div class="sparkles">
+                                <div class="sparkle"></div>
+                                <div class="sparkle"></div>
+                                <div class="sparkle"></div>
+                                <div class="sparkle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-card">
+                    <div class="dates-container">
+                        <div class="dates-title">Prochaines sessions 2025</div>
+                        <div class="date-item"><strong>Vosges :</strong> 25-27 sept • 20-22 nov • 18-20 déc</div>
+                        <div class="date-item"><strong>Lyon :</strong> 23-25 octobre</div>
+                    </div>
+                    <div class="info-text">6 places maximum par session</div>
+                    <div class="sub-info">Sélection sur entretien individuel</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transformez votre leadership</h2>
+                <p>Devenez un dirigeant lucide, serein et puissant dans vos décisions</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Autorité intérieure</h3>
+                    <p>Développez une vision claire et une posture alignée avec vos valeurs profondes. Clarifiez votre identité professionnelle authentique.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Performance durable</h3>
+                    <p>Renforcez votre leadership sans vous épuiser. Créez un équilibre authentique entre ambitions et bien-être personnel.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Impact inspirant</h3>
+                    <p>Améliorez la gestion du changement et renforcez la cohésion de vos équipes grâce à un leadership inspirant et bienveillant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="program section" id="programme">
+        <div class="container">
+            <div class="section-title">
+                <h2>Un parcours structuré en 3 jours</h2>
+                <p>Une approche progressive pour ancrer durablement votre transformation</p>
+            </div>
+            
+            <div class="program-days">
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-number">Jour 1</div>
+                        <div class="day-title">Alignement & Révélation</div>
+                    </div>
+                    <div class="day-content">
+                        <p class="day-description">Clarifiez votre identité professionnelle, vos intentions et vos valeurs profondes.</p>
+                        <ul class="day-activities">
+                            <li>Diagnostic approfondi de votre style de leadership</li>
+                            <li>Identification de vos valeurs cardinales</li>
+                            <li>Définition de votre vision personnelle</li>
+                            <li>Travail sur l'authenticité professionnelle</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-number">Jour 2</div>
+                        <div class="day-title">Posture & Impact</div>
+                    </div>
+                    <div class="day-content">
+                        <p class="day-description">Travaillez votre présence, la gestion du stress et la communication assertive.</p>
+                        <ul class="day-activities">
+                            <li>Techniques de présence et d'ancrage</li>
+                            <li>Gestion avancée du stress et des émotions</li>
+                            <li>Communication assertive et bienveillante</li>
+                            <li>Développement de votre charisme naturel</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-number">Jour 3</div>
+                        <div class="day-title">Intégration & Plan d'action</div>
+                    </div>
+                    <div class="day-content">
+                        <p class="day-description">Construisez vos habitudes durables, votre stratégie alignée et votre ancrage.</p>
+                        <ul class="day-activities">
+                            <li>Création de votre plan d'action personnalisé</li>
+                            <li>Mise en place d'habitudes transformatrices</li>
+                            <li>Stratégies d'intégration au quotidien</li>
+                            <li>Préparation du suivi 12 mois</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section" id="tarifs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Investissement & Modalités</h2>
+                <p>Un accompagnement premium avec un suivi personnalisé de 12 mois</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <h3 class="pricing-location">Vosges</h3>
+                    <div class="pricing-price">2 150€</div>
+                    <div class="pricing-period">TTC</div>
+                    <div class="early-bird">Early Bird : -150€ avant le 15 août</div>
+                    <div class="pricing-details">
+                        <strong>3 sessions disponibles :</strong><br>
+                        25-27 sept • 20-22 nov • 18-20 déc
+                    </div>
+                    <div class="pricing-includes">
+                        <h4>Inclus :</h4>
+                        <p>3 jours de stage + 12 mois de suivi collectif + Accès plateforme ressources</p>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="pricing-location">Lyon</h3>
+                    <div class="pricing-price">2 350€</div>
+                    <div class="pricing-period">TTC</div>
+                    <div class="early-bird">Early Bird : -150€ avant le 15 août</div>
+                    <div class="pricing-details">
+                        <strong>1 session disponible :</strong><br>
+                        23-25 octobre
+                    </div>
+                    <div class="pricing-includes">
+                        <h4>Inclus :</h4>
+                        <p>3 jours de stage + 12 mois de suivi collectif + Accès plateforme ressources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Le mot de Zorica</h2>
+            </div>
+            <div class="testimonial-content">
+                <p class="testimonial-quote">
+                    EK!NOX est né d'une conviction : on peut être fort.e sans être dur.e, performant.e sans se perdre, stratégique sans se trahir.
+                    J'ai créé ce parcours pour vous offrir un espace d'exigence et de bienveillance. Un moment de bascule. Un point d'équilibre.
+                </p>
+                <div class="testimonial-author">Zorica VUCIC</div>
+                <div class="testimonial-title">Coach professionnelle</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt(e) à franchir le cap ?</h2>
+                <p>Votre transformation commence par un simple échange</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:zorica.vucic@a-to-z.fr" class="cta-button">
+                        <i class="fas fa-envelope"></i>
+                        Je pose ma candidature
+                    </a>
+                </div>
+                
+                <div class="contact-info">
+                    <p><strong>Contact :</strong></p>
+                    <p><a href="mailto:zorica.vucic@a-to-z.fr">zorica.vucic@a-to-z.fr</a></p>
+                    <p><a href="tel:0754835583">07 54 83 55 83</a></p>
+                    <p style="margin-top: var(--spacing-lg); font-size: 1rem; opacity: 0.9;">
+                        Maximum 6 participants par session • Sélection sur entretien individuel
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = 80;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.benefit-card, .day-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Add hover effects
+        document.querySelectorAll('.benefit-card, .day-card, .pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.3;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < hero.offsetHeight) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // CTA button pulse effect
+        setInterval(function() {
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.style.animation = 'none';
+                setTimeout(() => {
+                    button.style.animation = 'pulse 0.6s ease-in-out';
+                }, 10);
+            });
+        }, 8000);
+    </script>
+</body>
+</html>
