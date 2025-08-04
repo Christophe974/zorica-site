@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EK!NOX - Incarnez une posture puissante et équilibrée</title>
+    <title>EK!NOX - Programme stratégique pour leaders lucides</title>
     <style>
         * {
             margin: 0;
@@ -16,7 +16,6 @@
             line-height: 1.6;
             color: #4E2C54;
             background-color: #FDFBF9;
-            overflow-x: hidden;
         }
 
         .container {
@@ -25,12 +24,12 @@
             padding: 0 20px;
         }
 
-        /* Hero Section */
+        /* Header */
         .hero {
             background: linear-gradient(135deg, #A18FCF 0%, #D6B98C 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+            color: #FDFBF9;
+            padding: 80px 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -42,860 +41,797 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: #FDFBF9;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             font-weight: 300;
-            margin-bottom: 2rem;
-            letter-spacing: 0.1em;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        .hero-tagline {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            margin-bottom: 3rem;
-            font-weight: 400;
-            opacity: 0.95;
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-style: italic;
+            opacity: 0.9;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            margin-bottom: 4rem;
+        .hero .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.8;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-
-        .btn {
-            padding: 1.2rem 2.5rem;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .cta-button {
             display: inline-block;
-            text-align: center;
-            min-width: 250px;
-        }
-
-        .btn-primary {
             background: #4E2C54;
             color: #FDFBF9;
-            box-shadow: 0 10px 30px rgba(78, 44, 84, 0.3);
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(78, 44, 84, 0.3);
         }
 
-        .btn-primary:hover {
-            background: #3d1f42;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(78, 44, 84, 0.4);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(78, 44, 84, 0.4);
+            background: #5a3461;
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: #FDFBF9;
-            border: 2px solid #FDFBF9;
-        }
-
-        .btn-secondary:hover {
-            background: #FDFBF9;
-            color: #4E2C54;
-            transform: translateY(-2px);
-        }
-
-        /* Section Styling */
+        /* Sections */
         .section {
-            padding: 6rem 0;
+            padding: 80px 0;
         }
 
-        .section-alt {
-            background: linear-gradient(45deg, #A18FCF10, #D6B98C10);
+        .section:nth-child(even) {
+            background: linear-gradient(to right, rgba(161, 143, 207, 0.05), rgba(214, 185, 140, 0.05));
         }
 
         .section h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            text-align: center;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
             color: #4E2C54;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #A18FCF, #D6B98C);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .section h3 {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            margin-bottom: 2rem;
-            color: #4E2C54;
-        }
-
-        .intro-text {
-            font-size: 1.3rem;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 4rem;
-            line-height: 1.8;
-            color: #4E2C54;
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, #D6B98C50 0%, #D6B98C30 100%);
-            padding: 0.2em 0.5em;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-
-        /* Grid Layout */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-
-        .benefit-card {
-            background: #FDFBF9;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(78, 44, 84, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-card h4 {
             color: #A18FCF;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Target Audience */
-        .target-points {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .target-point {
-            background: linear-gradient(135deg, #A18FCF, #D6B98C);
-            color: #FDFBF9;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* Program Details */
-        .program-phases {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 4rem;
-            margin: 4rem 0;
-        }
-
-        .phase-card {
-            background: #FDFBF9;
-            border: 2px solid #A18FCF;
-            border-radius: 20px;
-            padding: 3rem;
-            position: relative;
-        }
-
-        .phase-number {
-            position: absolute;
-            top: -20px;
-            left: 30px;
-            background: #A18FCF;
-            color: #FDFBF9;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .phase-title {
-            margin-top: 1rem;
-            color: #4E2C54;
             font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            margin: 40px 0 20px 0;
         }
 
-        .phase-content ul {
+        .checkmarks {
             list-style: none;
-            padding: 0;
+            margin: 30px 0;
         }
 
-        .phase-content li {
-            margin: 1rem 0;
-            padding-left: 2rem;
+        .checkmarks li {
+            padding: 10px 0;
             position: relative;
+            padding-left: 40px;
+            font-size: 1.1rem;
         }
 
-        .phase-content li::before {
-            content: '✦';
-            color: #D6B98C;
+        .checkmarks li::before {
+            content: '✔️';
             position: absolute;
             left: 0;
-            font-weight: bold;
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .testimonial {
-            background: #FDFBF9;
-            padding: 2.5rem;
-            border-radius: 15px;
-            border-left: 5px solid #A18FCF;
-            box-shadow: 0 5px 20px rgba(78, 44, 84, 0.1);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-author {
-            color: #4E2C54;
-            font-weight: 600;
-        }
-
-        /* Pricing */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-
-        .pricing-card {
-            background: #FDFBF9;
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(78, 44, 84, 0.1);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .price {
-            font-size: 3rem;
             color: #A18FCF;
             font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .promo-banner {
-            background: linear-gradient(135deg, #D6B98C, #A18FCF);
-            color: #FDFBF9;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            margin: 2rem 0;
-            display: inline-block;
-        }
-
-        /* FAQ */
-        .faq-item {
-            background: #FDFBF9;
-            margin: 1.5rem 0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(78, 44, 84, 0.1);
-        }
-
-        .faq-question {
-            background: #A18FCF;
-            color: #FDFBF9;
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .faq-answer {
-            padding: 2rem;
-            display: none;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        /* Footer CTA */
-        .final-cta {
-            background: linear-gradient(135deg, #4E2C54, #A18FCF);
-            color: #FDFBF9;
-            text-align: center;
-            padding: 6rem 2rem;
-        }
-
-        .final-cta h2 {
-            color: #FDFBF9;
-            margin-bottom: 2rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .program-phases {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Video Section */
-        .video-section {
-            background: linear-gradient(135deg, #4E2C54, #A18FCF);
-            padding: 6rem 0;
-            text-align: center;
         }
 
         .video-container {
-            max-width: 800px;
-            margin: 0 auto;
+            text-align: center;
+            margin: 60px 0;
+            background: #FDFBF9;
+            padding: 40px;
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .video-container video {
             width: 100%;
-            height: auto;
-            display: block;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
         }
 
-        .video-title {
-            color: #FDFBF9;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        .phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
         }
 
-        .video-subtitle {
+        .phase {
+            background: #FDFBF9;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #A18FCF;
+            transition: transform 0.3s ease;
+        }
+
+        .phase:hover {
+            transform: translateY(-5px);
+        }
+
+        .phase h4 {
+            color: #4E2C54;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #A18FCF, #D6B98C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonials {
+            background: linear-gradient(135deg, #A18FCF 0%, #D6B98C 100%);
             color: #FDFBF9;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
+            padding: 80px 0;
+            margin: 80px 0;
+            border-radius: 30px;
+        }
+
+        .testimonial {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
             opacity: 0.9;
         }
-        .floating-spark {
+
+        .zorica-profile {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 60px 0;
+            background: #FDFBF9;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .zorica-profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .pricing {
+            background: linear-gradient(135deg, #4E2C54 0%, #A18FCF 100%);
+            color: #FDFBF9;
+            padding: 80px 40px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .pricing .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .pricing .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.5rem;
+        }
+
+        .faq {
+            background: #FDFBF9;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .faq h4 {
+            color: #A18FCF;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(161, 143, 207, 0.2), rgba(214, 185, 140, 0.2));
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border-left: 5px solid #D6B98C;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #A18FCF;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
             position: absolute;
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.3);
-            animation: float 6s ease-in-out infinite;
+            left: -20px;
+            top: -20px;
+            opacity: 0.3;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .phases {
+                grid-template-columns: 1fr;
+            }
+            
+            .zorica-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
         }
-
-        .spark-1 { top: 20%; left: 10%; animation-delay: 0s; }
-        .spark-2 { top: 60%; right: 15%; animation-delay: 2s; }
-        .spark-3 { bottom: 30%; left: 20%; animation-delay: 4s; }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="floating-spark spark-1">✦</div>
-        <div class="floating-spark spark-2">✦</div>
-        <div class="floating-spark spark-3">✦</div>
-        
         <div class="container">
-            <div class="hero-content">
-                <h1>✦ EK!NOX ✦</h1>
-                <div class="hero-tagline">Incarnez une posture puissante et équilibrée</div>
-                <div class="hero-subtitle">
-                    Bootcamp + coaching d'élite, pour décideurs en quête d'alignement, d'énergie et de clarté.
-                    <br><br>
-                    <strong>Ce n'est pas un simple stage.</strong>
-                    <br>
-                    C'est une immersion stratégique, un reset profond, un saut de conscience.
-                </div>
-                
-                <div class="cta-buttons">
-                    <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" target="_blank" class="btn btn-primary">
-                        <span class="btn-icon">📞</span>
-                        Parlons de votre transformation
-                    </a>
-                </div>
+            <img src="https://zorica.pro/images/logo-EKINOX.jpg" alt="EK!NOX Logo" class="logo">
+            <h1>✦ EK!NOX ✦</h1>
+            <p class="subtitle"><em>Incarnez une posture puissante et équilibrée</em></p>
+            <p class="tagline"><strong>Programme stratégique pour leaders lucides mais essoufflés en quête de sens, d'énergie et de cohérence.</strong></p>
+            
+            <div style="margin: 40px 0; font-size: 1.2rem;">
+                <p>Et si votre fatigue ... n'était pas un signe de faiblesse mais un signal stratégique ?</p>
+                <p><strong>Vous n'êtes pas à rebâtir, vous êtes à reconnecter.</strong></p>
+            </div>
+            
+            <p style="font-size: 1.3rem; margin-bottom: 40px;"><strong>EK!NOX</strong> est <strong>votre bouffée d'oxygène</strong> pour retrouver votre puissance, en pleine conscience, sans lutter ni surperformer : <em><strong>Bootcamp + coaching d'élite.</strong></em></p>
+            
+            <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" class="cta-button">👉 Prenez rendez-vous pour savoir si EKINOX est votre prochaine étape stratégique</a>
+        </div>
+    </section>
+
+    <!-- Pour qui -->
+    <section class="section">
+        <div class="container">
+            <h2>✦ Pour qui ?</h2>
+            <p style="font-size: 1.2rem; text-align: center; margin-bottom: 30px;">EK!NOX s'adresse aux entrepreneurs, dirigeants et managers</p>
+            <ul class="checkmarks" style="max-width: 600px; margin: 0 auto;">
+                <li>engagés mais surmenés</li>
+                <li>lucides mais parfois à bout</li>
+                <li>brillants mais fatigués de devoir tout porter.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p style="font-size: 1.2rem; text-align: center;"><strong>Vous êtes fatigué d'être le pilier pour tout le monde sauf pour vous-même ?<br>
+                Vous voulez retrouver une posture d'impact sans vous trahir ?</strong></p>
+            </div>
+
+            <h3>Vous reconnaissez-vous dans ces réalités ?</h3>
+            <ul style="margin: 30px 0; font-size: 1.1rem;">
+                <li style="margin: 15px 0;">• Vous êtes submergé, toujours en mode "urgence", sans jamais réussir à vous recentrer.</li>
+                <li style="margin: 15px 0;">• Vous portez le poids des responsabilités sans pouvoir poser vos limites sans culpabiliser.</li>
+                <li style="margin: 15px 0;">• Vous manquez de clarté sur vos priorités personnelles et professionnelles.</li>
+                <li style="margin: 15px 0;">• Vous vivez une fatigue chronique qui érode votre motivation et votre leadership.</li>
+                <li style="margin: 15px 0;">• Vous vous sentez déconnecté de vous-même, noyé sous les attentes des autres et les injonctions externes.</li>
+            </ul>
+
+            <div class="quote">
+                Ce sont les signaux d'alerte d'un leadership en souffrance --- mais c'est aussi une invitation à un changement profond.<br><br>
+                <strong>EK!NOX est pour vous.</strong><br><br>
+                Parce que la puissance ne vient pas de l'agitation, mais de l'alignement profond et ancré.
             </div>
         </div>
     </section>
 
-    <!-- Video Presentation Section -->
-    <section class="video-section">
+    <!-- Ce que nous explorons -->
+    <section class="section">
         <div class="container">
-            <h2 class="video-title">Découvrez Zorica en action</h2>
-            <p class="video-subtitle">Une présentation authentique de l'approche qui transforme les leaders</p>
+            <h2>✦ Ce que nous explorons ensemble</h2>
+            <p style="font-size: 1.2rem; text-align: center; margin-bottom: 40px;">Dans EK!NOX, on ne cherche pas à "corriger" les personnes.<br>
+            On redonne les commandes, avec douceur, lucidité et puissance.</p>
+
+            <ul style="font-size: 1.1rem; margin: 40px 0;">
+                <li style="margin: 15px 0;">• Les mécanismes cognitifs qui vous conditionnent</li>
+                <li style="margin: 15px 0;">• Les stratégies mentales qui sabotent vos élans</li>
+                <li style="margin: 15px 0;">• Les leviers de reprogrammation qui reconnectent à la clarté, à l'élan et à la confiance</li>
+            </ul>
+
+            <div class="highlight">
+                <p style="text-align: center; font-size: 1.2rem;">EK!NOX, c'est un espace où les masques tombent,<br>
+                où l'on ose incarner une posture pleine, libre, régulée.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pour quoi faire -->
+    <section class="section">
+        <div class="container">
+            <h2>🔥 Pour quoi faire ?</h2>
+            <ul class="checkmarks" style="max-width: 800px; margin: 0 auto;">
+                <li>Vous remettre au centre de votre agenda.</li>
+                <li>Revenir à l'essentiel : <strong>vos besoins, vos valeurs, votre cap.</strong></li>
+                <li>Retrouver une énergie alignée et sereine (pas un regain d'adrénaline... une puissance stable).</li>
+                <li>Reprendre votre rôle de leader avec plus de lucidité, moins de tensions.</li>
+                <li>Apprendre à piloter autrement : en mobilisant <strong>votre intelligence émotionnelle</strong>, <strong>votre discernement</strong>, <strong>votre capacité à créer du sens.</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Genèse d'EK!NOX -->
+    <section class="section">
+        <div class="container">
+            <h2>✦ La genèse d'EK!NOX</h2>
+            <div class="zorica-profile">
+                <img src="https://zorica.pro/images/zorica.jpg" alt="Zorica VUCIC">
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">J'ai longtemps cru qu'il fallait être irréprochable pour réussir. Brillante, solide, stratégique, sans failles. Issue de l'immigration, j'ai grandi avec ce message silencieux : il faut faire deux fois plus pour avoir moitié moins.</p>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>EK!NOX est né de ce paradoxe.</strong> De ce moment de bascule où j'ai compris qu'on peut être ambitieuse, exigeante, engagée... sans s'épuiser, sans se suradapter, sans s'oublier.</p>
+                    
+                    <p style="font-size: 1.1rem;">Je suis Zorica, coach, formatrice, ancienne manager en entreprises industrielles, médicales, BTP, cabinet conseil et Transport</p>
+                </div>
+            </div>
+
+            <p style="font-size: 1.1rem; margin: 30px 0;">Ce chemin, je l'ai traversé : le feu, les doutes, les cycles à bout de souffle.</p>
+
+            <p style="font-size: 1.1rem; margin: 30px 0;">J'ai enrichi mon parcours de terrain de puissants outils issus du coaching professionnel et des sciences cognitives et comportementales, et aujourd'hui, j'accompagne celles et ceux qui veulent avancer autrement --- avec clarté, cohérence et puissance.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
+                <div style="padding: 30px; background: #FDFBF9; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #A18FCF; margin-bottom: 15px;">Posture forte et souple</h4>
+                    <p>Apprendre à naviguer au-delà du doute, sans se raidir ni vaciller. Cultiver une présence ancrée, stable, mais souple, vivante et pleinement incarnée.</p>
+                </div>
+                <div style="padding: 30px; background: #FDFBF9; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #A18FCF; margin-bottom: 15px;">Alignement authentique</h4>
+                    <p>S'aligner avec soi pour mieux rayonner : dans ses décisions, sa communication, son leadership.</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p style="text-align: center; font-size: 1.2rem;"><strong>C'est ce que j'aurais aimé trouver plus tôt</strong>. Aujourd'hui, je le propose --- avec joie, avec foi... et avec vous.</p>
+                
+                <p style="text-align: center; font-size: 1.1rem; margin-top: 20px;">Brisez les attentes. Débarrassez-vous du poids des autres, sans culpabiliser. Votre authenticité est votre force.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le programme -->
+    <section class="section">
+        <div class="container">
+            <h2>✦ Le programme EK!NOX</h2>
+            <p style="font-size: 1.3rem; text-align: center; margin-bottom: 40px;"><strong>c'est 12 mois d'accompagnement puissant, pour leaders engagés.</strong></p>
+            <p style="font-size: 1.2rem; text-align: center; font-style: italic; margin-bottom: 60px;"><em>Bootcamp + coaching d'élite, pour décideurs en quête d'alignement, d'énergie et de clarté.</em></p>
+
+            <h3 style="text-align: center; margin-bottom: 40px;">🚀 Programme en 2 phases :</h3>
+
+            <div class="phases">
+                <div class="phase">
+                    <h4>PHASE 1 : EKINOX Bootcamp -- 3 jours en immersion</h4>
+                    <p style="margin-bottom: 20px;">3 jours hors du tumulte, une coupure radicale, reset profond pour une reconnexion à vous-même et aux leviers de votre énergie.<br>
+                    Dans un lieu inspirant, avec un petit groupe de décideurs (6 à 8 personnes max).<br>
+                    Formation, respiration, outils puissants de coaching, de neurosciences et de psychologie stratégique.</p>
+
+                    <h5 style="color: #A18FCF; margin: 25px 0 15px 0;">Objectif :</h5>
+                    <ul>
+                        <li>Clarifier son cap personnel et professionnel</li>
+                        <li>Identifier les mécanismes de suradaptation, de fatigue et d'auto-sabotage</li>
+                        <li>Pratiquer une posture de leadership plus fluide, incarnée et alignée</li>
+                    </ul>
+
+                    <p style="margin: 20px 0; font-style: italic;">🌿 Format résidentiel, cadre inspirant, dynamique de groupe bienveillante et puissante</p>
+
+                    <h5 style="color: #A18FCF; margin: 25px 0 15px 0;">Contenu des 3 jours de formation :</h5>
+                    
+                    <div style="margin: 20px 0;">
+                        <h6 style="color: #4E2C54; margin-bottom: 10px;"><strong>Jour 1 : Fondations et Alignement</strong></h6>
+                        <ul>
+                            <li>Révéler votre identité authentique et clarifier vos ambitions,</li>
+                            <li>Identifier les freins issus du passé et mettre en place vos leviers de croissance,</li>
+                            <li>Evaluer et dépasser le syndrome de l'imposteur en apprenant à naviguer au delà du doute.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 20px 0;">
+                        <h6 style="color: #4E2C54; margin-bottom: 10px;"><strong>Jour 2 : Affirmation et Impact</strong></h6>
+                        <ul>
+                            <li>Transformez vos émotions en force intérieure et levier de croissance,</li>
+                            <li>Développez une méthode de communication efficace et impactante,</li>
+                            <li>Ancrez une posture assertive pour faire entendre votre voix avec confiance.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 20px 0;">
+                        <h6 style="color: #4E2C54; margin-bottom: 10px;"><strong>Jour 3 : Action et Croissance</strong></h6>
+                        <ul>
+                            <li>Reprogrammez votre cerveau sur des habitudes qui soutiennent votre excellence,</li>
+                            <li>Elaborez votre plan d'action pour transformer vos aspirations en réalisations tangibles,</li>
+                            <li>Créez un élan durable : repartez inspirée, dynamisée et incarnez votre vision</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <h4>PHASE 2 : Accompagnement sur 12 mois</h4>
+                    <p style="margin-bottom: 20px;"><strong>Vous n'êtes pas lâché.e dans la nature après le stage.</strong></p>
+
+                    <h5 style="color: #A18FCF; margin: 25px 0 15px 0;">4 sessions collectives : Les Cercles d'Impact des Décideurs (1/2 journée par trimestre) :</h5>
+                    <ul>
+                        <li>4 rendez-vous puissants pour garder le cap.</li>
+                        <li>En présentiel (adaptable en visio si besoin).</li>
+                        <li>Reconnexion à votre alignement, ancrage de vos décisions, montée en puissance.</li>
+                        <li>Intelligence collective, partages stratégiques et soutien entre pairs.</li>
+                    </ul>
+
+                    <h5 style="color: #A18FCF; margin: 25px 0 15px 0;">Objectif :</h5>
+                    <ul>
+                        <li>Ancrer les transformations, élévation continue,</li>
+                        <li>Ajuster les stratégies et suivre les engagements,</li>
+                        <li>Faire le point sur les défis du moment, et comment les dépasser,</li>
+                        <li>Revenir à l'essentiel, sans masque et sans pression,</li>
+                        <li>Avancer avec régularité, dans une tribu de pairs engagés,</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 60px 0;">
+                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" class="cta-button">👉 🧭 15 minutes pour voir clair et décider en conscience. - Reservez votre appel --</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vidéo de présentation -->
+    <section class="section">
+        <div class="container">
             <div class="video-container">
-                <video controls poster="https://zorica.pro/images/video-poster.jpg">
-                    <source src="https://www.idkom.fr/zorica.pro/CREDITMUT.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+                <h2 style="margin-bottom: 30px;">Découvrez EK!NOX avec Zorica</h2>
+                <video controls poster="https://zorica.pro/images/zorica.jpg">
+                    <source src="https://zorica.pro/uploads/videos/zorica.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
             </div>
         </div>
     </section>
 
-    <!-- Pourquoi Section -->
+    <!-- Qui suis-je -->
     <section class="section">
         <div class="container">
-            <h2>🔥 Pour quoi faire ?</h2>
-            <div class="intro-text">
-                Pour celles et ceux qui en ont assez de performer <span class="highlight">au prix de leur équilibre</span>.
-                Et qui veulent un leadership plus juste, plus puissant, plus durable.
-            </div>
+            <h2>✦ Qui suis-je pour vous proposer EK!NOX ?</h2>
             
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h4>🎯 Vous remettre au centre</h4>
-                    <p>Vous remettre au centre de votre agenda. Revenir à l'essentiel : vos besoins, vos valeurs, votre cap.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>⚡ Énergie alignée</h4>
-                    <p>Retrouver une énergie alignée et sereine (pas un regain d'adrénaline… une puissance stable).</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🧭 Leadership lucide</h4>
-                    <p>Reprendre votre rôle de leader avec plus de lucidité, moins de tensions.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🎯 Piloter autrement</h4>
-                    <p>Apprendre à piloter en mobilisant votre intelligence émotionnelle, votre discernement, votre capacité à créer du sens.</p>
-                </div>
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">Je m'appelle Zorica VUCIC, coach stratégique et formatrice en posture professionnelle et intelligence relationnelle.<br>
+            Depuis 2020, j'ai accompagné plus de 80 professionnels, dirigeants et décideurs, et formé plus de 400 collaborateurs à se préserver dans un environnement complexe, à retrouver puissance, clarté et souffle dans leur posture au quotidien.</p>
+
+            <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>Pas en leur donnant des recettes toutes faites.</strong><br>
+            Mais en créant l'espace et la dynamique pour qu'ils reprogramment leur façon d'être, de décider, de piloter, en s'appuyant sur l'intelligence relationnelle et la profondeur de leurs propres ressources.</p>
+
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">Mon expertise s'appuie sur près de 25 ans de terrain, où j'ai vu des collègues en souffrance, des tensions stigmatiser des relations, des conflits plomber la performance.<br>
+            À chaque fois, ce qui manquait n'était pas de la bonne volonté, ni des compétences techniques.<br>
+            Ce qui manquait, c'était une communication juste et constructive.<br>
+            Mais comment l'avoir, quand chacun est pris dans ses propres schémas inconscients, ses peurs, ses masques de protection ?<br>
+            Quand on dit une chose, mais qu'on agit à l'opposé, sans même s'en rendre compte ?</p>
+
+            <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>C'est là que j'interviens.</strong><br>
+            Je ne vous apprends pas à « mieux gérer » vos responsabilités.<br>
+            Je vous aide à reprendre le pouvoir sur votre rôle, sans vous épuiser, sans vous oublier et sans vous couper de votre ambition.</p>
+
+            <div class="highlight">
+                <p style="text-align: center; font-size: 1.2rem;">Parce que vous n'avez pas à choisir entre l'impact et la sérénité.<br>
+                <strong>Faite de votre posture votre vrai levier d'influence.</strong></p>
             </div>
+
+            <ul class="checkmarks" style="max-width: 800px; margin: 40px auto;">
+                <li>🎯 25 ans d'expérience en RH et accompagnement de dirigeants</li>
+                <li>🧭 Coach professionnelle certifiée RNCP & formatrice en posture et leadership</li>
+                <li>🌱 Fondatrice du programmes EK!NOX : le cercle d'élite des leaders qui veulent conjuguer performance et justesse intérieure, sans sacrifier leur santé mentale</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Pour qui Section -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2>✦ Pour qui ?</h2>
-            <div class="intro-text">
-                EK!NOX s'adresse aux entrepreneurs, dirigeants et décideurs
-            </div>
-            
-            <div class="target-points">
-                <div class="target-point">💼 engagés mais surmenés</div>
-                <div class="target-point">🎯 lucides mais parfois à bout</div>
-                <div class="target-point">⭐ brillants mais fatigués de devoir tout porter</div>
-            </div>
-            
-            <div class="intro-text">
-                <strong>Vous êtes fatigué d'être le pilier pour tout le monde sauf pour vous-même ?</strong>
-                <br>
-                Vous voulez retrouver une posture d'impact sans vous trahir ?
-                <br><br>
-                <span class="highlight">EK!NOX est pour vous.</span>
-                <br>
-                Parce que la puissance ne vient pas de l'agitation, mais de l'alignement.
-            </div>
-        </div>
-    </section>
-
-    <!-- Genèse Section -->
+    <!-- Ce que mes clients cherchaient -->
     <section class="section">
         <div class="container">
-            <h2>✦ La genèse d'EK!NOX</h2>
-            <div class="intro-text">
-                J'ai longtemps cru qu'il fallait être irréprochable pour réussir.
-                Brillante, solide, stratégique, sans failles.
-                <br><br>
-                Issue de l'immigration, j'ai grandi avec ce message silencieux :
-                <em>il faut faire deux fois plus pour avoir moitié moins.</em>
-                <br><br>
-                EK!NOX est né de ce paradoxe. De ce moment de bascule où j'ai compris qu'on peut être ambitieuse, exigeante, engagée…
-                <span class="highlight">sans s'épuiser, sans se suradapter, sans s'oublier.</span>
-            </div>
+            <h2>✦ Ce que mes clients cherchaient sans le trouver... je l'ai créé :</h2>
             
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h4>🌟 Posture forte et souple</h4>
-                    <p>Retrouver une posture forte et souple à la fois.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>✨ Alignement authentique</h4>
-                    <p>S'aligner avec soi pour mieux rayonner dans ses décisions, sa communication, son leadership.</p>
-                </div>
-            </div>
-            
-            <div class="intro-text">
-                <strong>✨ C'est ce que j'aurais aimé trouver plus tôt.</strong>
-                <br>
-                Aujourd'hui, je le propose, avec joie, avec foi… Et avec vous.
+            <div style="font-style: italic; font-size: 1.1rem; margin: 40px 0; padding: 30px; background: rgba(161, 143, 207, 0.1); border-radius: 15px;">
+                <p style="margin-bottom: 20px;">Depuis 2020, j'accompagne des dirigeants, managers et entrepreneures à retrouver une posture solide, lucide et inspirante.<br>
+                Et ce qui revient souvent, c'est ce <strong>manque d'un espace collectif à la fois sécurisant, stimulant et profondément transformateur</strong>.</p>
+
+                <p style="margin-bottom: 20px;">👉 Un lieu où l'on peut vraiment <strong>poser les masques</strong>,<br>
+                👉 Explorer ses freins sans être jugé,<br>
+                👉 Et surtout, <strong>recharger ses ressources internes</strong> aux côtés de pairs confrontés aux mêmes tempêtes.</p>
+
+                <p style="margin-bottom: 20px;"><strong><em>EK!NOX est né de ce besoin.</em></strong><br>
+                Ce programme est ma réponse à toutes ces voix qui me disaient :</p>
+
+                <p style="margin-bottom: 20px;">"Je me sens seul(e) dans mon rôle."<br>
+                "Je n'ai pas d'espace pour souffler, pour penser autrement."<br>
+                "Je voudrais aller plus loin... mais pas seul(e), et pas dans un énième cadre théorique."</p>
+
+                <p>🎯 EK!NOX incarne tout ce que j'ai voulu offrir en mieux :<br>
+                de la <strong>profondeur</strong>, du <strong>cadre</strong>, de l'<strong>expérience vécue</strong>, de l'<strong>intelligence collective</strong>... et une <strong>reconnexion puissante à soi</strong>.</p>
             </div>
         </div>
     </section>
 
-    <!-- Programme Section -->
-    <section class="section section-alt">
+    <!-- Témoignages -->
+    <section class="testimonials">
         <div class="container">
-            <h2>✦ Le programme EK!NOX</h2>
-            <div class="intro-text">
-                <strong>12 mois d'accompagnement puissant, pour leaders engagés.</strong>
-            </div>
-            
-            <div class="program-phases">
-                <div class="phase-card">
-                    <div class="phase-number">1</div>
-                    <h3 class="phase-title">EKINOX Bootcamp – 3 jours en immersion</h3>
-                    <div class="phase-content">
-                        <p><strong>3 jours hors du tumulte, une coupure radicale, reset profond</strong> pour une reconnexion à vous-même et aux leviers de votre énergie.</p>
-                        
-                        <h4>📅 Jour 1 : Fondations et Alignement</h4>
-                        <ul>
-                            <li>🔍 Révéler votre identité authentique et clarifier vos ambitions</li>
-                            <li>🚫 Identifier les freins issus du passé et mettre en place vos leviers de croissance</li>
-                            <li>💪 Dépasser le syndrome de l'imposteur</li>
-                        </ul>
-                        
-                        <h4>📅 Jour 2 : Affirmation et Impact</h4>
-                        <ul>
-                            <li>🔥 Transformez vos émotions en force intérieure</li>
-                            <li>📢 Développez une méthode de communication efficace et impactante</li>
-                            <li>🎯 Ancrez une posture assertive</li>
-                        </ul>
-                        
-                        <h4>📅 Jour 3 : Action et Croissance</h4>
-                        <ul>
-                            <li>🧠 Reprogrammez votre cerveau sur des habitudes qui soutiennent votre excellence</li>
-                            <li>📋 Élaborez votre plan d'action pour transformer vos aspirations en réalisations</li>
-                            <li>🚀 Créez un élan durable</li>
-                        </ul>
-                    </div>
+            <h2 style="color: #FDFBF9;">✦ Ce que mes clients me disent</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;"><strong>🎯 100 % des clients accompagnés depuis 2020</strong> témoignent d'un <strong>avant/après</strong> concret et durable :</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="testimonial">
+                    <p>💬 "Je ne pensais pas qu'en 2h je pourrais voir aussi clair. Je suis repartie avec un déclic."</p>
+                    <p class="author">Fabienne, Dirigeante -- industrie textile</p>
                 </div>
-                
-                <div class="phase-card">
-                    <div class="phase-number">2</div>
-                    <h3 class="phase-title">Accompagnement sur 12 mois</h3>
-                    <div class="phase-content">
-                        <p><strong>Vous n'êtes pas lâché.e dans la nature après le stage.</strong></p>
-                        
-                        <h4>🤝 4 sessions collectives (1 par trimestre)</h4>
-                        <ul>
-                            <li>🎯 4 rendez-vous puissants pour garder le cap</li>
-                            <li>🏢 En présentiel (adaptable en visio si besoin)</li>
-                            <li>🧭 Reconnexion à votre alignement, ancrage de vos décisions</li>
-                            <li>💡 Intelligence collective, partages stratégiques et soutien entre pairs</li>
-                        </ul>
-                        
-                        <h4>⭕ Les Cercles d'Impact des Décideurs</h4>
-                        <p>⏰ 2 heures pour :</p>
-                        <ul>
-                            <li>📈 Ancrer les transformations, élévation continue</li>
-                            <li>🔄 Ajustements stratégiques, suivi des engagements</li>
-                            <li>🎯 Faire le point sur les défis du moment</li>
-                            <li>🎭 Revenir à l'essentiel, sans masque et sans pression</li>
-                            <li>👥 Avancer avec régularité, dans une tribu de pairs engagés</li>
-                        </ul>
-                    </div>
+
+                <div class="testimonial">
+                    <p>💬 "Avant je tenais par la volonté. Maintenant j'ai une boussole."</p>
+                    <p class="author">Denis, CEO -- Start-up Tech</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>💬 "Ce que je pensais être un problème d'équipe... était en fait un manque d'alignement personnel."</p>
+                    <p class="author">Alexandre, Manager -- secteur public</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>💬 "J'ai retrouvé une énergie que je croyais perdue."</p>
+                    <p class="author">Nicolas, Dirigeant, industrie BTP</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>💬 "Pour la première fois, j'ai osé poser mes limites sans culpabiliser."</p>
+                    <p class="author">Sophie, DRH, Entreprise Services</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>💬 "Ton accompagnement m'a fait passer un cap que je repoussais depuis des années."</p>
+                    <p class="author">Benoit, Directeur Commercial, industrie</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>💬 "C'est puissant, profond, jamais dans la complaisance mais toujours dans la justesse."</p>
+                    <p class="author">Géraldine, Consultante</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>💬 "J'ai fait en 3 mois ce que je n'avais pas réussi à faire en 3 ans."</p>
+                    <p class="author">Frédéric, Responsable Opérations, Grande Distribution.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Témoignages Section -->
-    <section class="section">
-        <div class="container">
-            <h2>✦ Ce que mes clients me disent</h2>
-            <div class="intro-text">
-                Même si c'est la première édition d'EK!NOX, voici ce que mes clients disent de mon accompagnement depuis 6 ans :
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-text">"Je ne pensais pas qu'en 2h je pourrais voir aussi clair. Je suis repartie avec un déclic."</div>
-                    <div class="testimonial-author">Fabienne, Dirigeante – industrie textile</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">"Avant je tenais par la volonté. Maintenant j'ai une boussole."</div>
-                    <div class="testimonial-author">Denis, CEO – Start-up Tech</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">"Ce que je pensais être un problème d'équipe… était en fait un manque d'alignement personnel."</div>
-                    <div class="testimonial-author">Alexandre, Manager – secteur public</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">"J'ai retrouvé une énergie que je croyais perdue."</div>
-                    <div class="testimonial-author">Nicolas, Dirigeant, industrie BTP</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">"Pour la première fois, j'ai osé poser mes limites sans culpabiliser."</div>
-                    <div class="testimonial-author">Sophie, DRH, Entreprise Services</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">"C'est puissant, profond, jamais dans la complaisance mais toujours dans la justesse."</div>
-                    <div class="testimonial-author">Géraldine, Consultante</div>
-                </div>
-            </div>
-            
-            <div class="intro-text">
-                <strong>🎯 100% des clients accompagnés depuis 2020 témoignent d'un avant/après concret et durable.</strong>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tarifs Section -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2>✦ Tarifs & Formules</h2>
-            <div class="intro-text">
-                Vous avez l'habitude d'investir dans votre entreprise, pour vos équipes ou votre famille :
-                <br>
-                <strong>Quand avez-vous investi pour vous la dernière fois ?</strong>
-            </div>
-            
-            <div class="promo-banner">
-                🎁 Offre de lancement spéciale : -15% pour toute inscription avant le 15 août 2025
-            </div>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>🏨 Formule Complète</h3>
-                    <p><strong>Immersion + Hébergement (3 jours) + 12 mois coaching collectif</strong></p>
-                    <div class="price">
-                        <span class="original-price">2 340 €</span>
-                        1 989 € TTC
-                    </div>
-                    <p>Profitez d'une expérience complète, immersive et confortable avec hébergement inclus. Repas et pauses inclus.</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" target="_blank" class="btn btn-primary">
-                            <span class="btn-icon">📞</span>
-                            Parlons de votre transformation
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="pricing-card">
-                    <h3>🎯 Formule Immersion</h3>
-                    <p><strong>Immersion seule (3 jours) + 12 mois coaching collectif</strong></p>
-                    <div class="price">
-                        <span class="original-price">1 590 €</span>
-                        1 350 € TTC
-                    </div>
-                    <p>Vivez pleinement le stage intensif sans hébergement. Idéal si vous préférez gérer votre hébergement de manière indépendante. Repas et pauses inclus.</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" target="_blank" class="btn btn-primary">
-                            <span class="btn-icon">📞</span>
-                            Parlons de votre transformation
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="intro-text">
-                <strong>📦 Chaque formule comprend :</strong>
-                <br>
-                ✅ Ressources exclusives 📚
-                <br>
-                ✅ Groupe de soutien entre pairs 👥
-            </div>
-        </div>
-    </section>
-
-    <!-- Dates Section -->
+    <!-- Prochaine session -->
     <section class="section">
         <div class="container">
             <h2>📆 Prochaine session EKINOX</h2>
-            <div class="intro-text">
-                <strong>📍 Lieu :</strong> Vosges : Hébergement contemporain avec équipements bien-être (spa, sauna, piscine couverte et bain à remous, restaurant gastronomique).
-                <br><br>
-                <strong>📅 Du Jeudi 25 au samedi 27 septembre 2025</strong>
-                <br>
-                <strong>🕐 De 9h à 12h00 et de 13h30 à 17h</strong>
-                <br><br>
-                🚀 Démarrage du programme : bootcamp immersif en septembre + suivi collectif dès décembre.
-            </div>
             
-            <div class="cta-buttons">
-                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" target="_blank" class="btn btn-primary">
-                    <span class="btn-icon">📞</span>
-                    Parlons de votre transformation
-                </a>
+            <div style="background: #FDFBF9; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 40px 0;">
+                <p style="font-size: 1.2rem; margin-bottom: 15px;">📍 Lieu : <strong>Vosges</strong> : Hébergement contemporain avec équipements bien-être (selon lieu : spa, sauna, piscine couverte et bain à remous, restaurant gastronomique).</p>
+                <p style="font-size: 1.2rem; margin-bottom: 15px;"><strong>📅 du Jeudi 25 au samedi 27 septembre 2025</strong></p>
+                <p style="font-size: 1.2rem; margin-bottom: 15px;">🕐 de 9h à 12h00 et de 13h30 à 17h</p>
+                <p style="font-size: 1.1rem;">Démarrage du programme : bootcamp immersif en septembre+ suivi collectif dès décembre.</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section section-alt">
+    <!-- Prêt à rejoindre -->
+    <section class="section">
         <div class="container">
-            <h2>❓ Foire Aux Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    🟡 À qui s'adresse EK!NOX ?
-                </div>
-                <div class="faq-answer">
-                    <p>EK!NOX s'adresse aux décideurs, entrepreneurs, dirigeants et managers qui veulent retrouver de la clarté, de l'énergie et de l'alignement dans leur posture. Hommes ou femmes, ce programme est conçu pour ceux qui veulent conjuguer performance et justesse intérieure, sans sacrifier leur santé mentale, leur vision ou leur authenticité.</p>
-                </div>
+            <h2>✦ Prêt.e à rejoindre l'aventure EK!NOX ?</h2>
+            <div style="text-align: center; margin: 40px 0;">
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">📆 Réservez votre place dès maintenant.<br>
+                🎯 Ou planifiez un appel découverte de 15 min pour valider si EK!NOX est fait pour vous.</p>
+                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" class="cta-button">Réservez votre place</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Tarif -->
+    <section class="pricing">
+        <div class="container">
+            <h2 style="color: #FDFBF9;">✦ Tarif : 1 seule formule « All inclusive » !</h2>
             
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    🟡 Je ne suis pas "en burn-out", est-ce que c'est pour moi ?
-                </div>
-                <div class="faq-answer">
-                    <p>Absolument. EK!NOX n'est pas un programme de "réparation", mais d'expansion. C'est un reset stratégique pour celles et ceux qui sentent qu'ils peuvent aller plus loin… sans s'y perdre. Il est pensé pour prévenir plutôt que guérir, et poser les fondations d'un leadership aligné et pérenne.</p>
-                </div>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Vous avez l'habitude d'investir dans votre entreprise, pour vos équipes ou votre famille :<br>
+            <strong>Quand avez-vous investi pour vous la dernière fois ?</strong></p>
+
+            <p style="margin-bottom: 30px;">Nous savons que les décideurs ont besoin d'un moment pour souffler vraiment, sans se préoccuper de la logistique et vous garantir énergie et concentration.</p>
+
+            <p style="margin-bottom: 40px;">C'est pourquoi EK!NOX vous propose une <strong>formule All Inclusive</strong> :</p>
+
+            <ul class="checkmarks" style="text-align: left; max-width: 600px; margin: 0 auto 40px auto;">
+                <li>Bootcamp (formation)</li>
+                <li>Hébergement + Repas (3 jours)</li>
+                <li>12 mois coaching collectif en mode codéveloppement</li>
+                <li>Ressources exclusives</li>
+                <li>groupe de soutien entre pairs</li>
+            </ul>
+
+            <div style="margin: 40px 0;">
+                <p class="original-price">Tarif = 2 475 € HT (2 970 € TTC)</p>
+                <p style="margin: 20px 0;">Profitez d'une expérience complète, immersive et confortable avec hébergement inclus.<br>
+                Un cadre idéal pour vous déconnecter, vous recentrer et vous ressourcer pleinement.<br>
+                Repas et pauses inclus, tout est organisé pour votre confort et votre focus.</p>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    🟡 Comment se déroule le programme ?
-                </div>
-                <div class="faq-answer">
-                    <p>EK!NOX démarre par 3 jours de stage immersif (en résidentiel), pour créer un déclic puissant et amorcer une vraie transformation. Puis, 4 séances de 2 heures coaching de groupe en présentiel, en mode codéveloppement, sont réparties sur l'année (1 par trimestre), pour ancrer les changements et accompagner les passages-clés de votre année professionnelle.</p>
-                </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; margin: 40px 0;">
+                <h3 style="color: #D6B98C;">🎁 1ère Offre exceptionnelle de lancement spéciale pour cette 1ère session : -20 %</h3>
+                <p class="price">→ Soit 1 980 € HT (2 375 € TTC)</p>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    🟡 Que vais-je concrètement retirer de ce programme ?
-                </div>
-                <div class="faq-answer">
-                    <p>✔ Une posture plus claire et affirmée.<br>
-                    ✔ Une capacité à prendre des décisions en étant aligné.e.<br>
-                    ✔ Moins de dispersion mentale, plus de focus.<br>
-                    ✔ Une meilleure relation à votre énergie, à votre temps et à votre entourage.<br>
-                    ✔ Un cadre confidentiel et stimulant pour penser différemment.<br>
-                    ✔ Des outils concrets et des déclics durables.</p>
-                </div>
+
+            <div style="background: rgba(214, 185, 140, 0.2); padding: 30px; border-radius: 20px; margin: 40px 0;">
+                <h3 style="color: #D6B98C;">🎁 2ème Offre Super Exceptionnelle : early bird</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">-10 % supplémentaires pour toute inscription avant 25 aout 2025</p>
+                <p class="price" style="font-size: 2.5rem;">→ Soit 1 782 € HT ( 2 138 € TTC)</p>
             </div>
+
+            <div style="margin: 60px 0;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Vous n'êtes pas à rebâtir. Vous êtes à reconnecter.</p>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">EK!NOX est une immersion stratégique pour leaders lucides mais essoufflés.</p>
+                <p style="font-size: 1.2rem; margin-bottom: 40px;">Ceux qui veulent retrouver leur puissance, sans lutter ni surperformer.</p>
+                
+                <p style="font-size: 1.3rem; margin-bottom: 30px;">🌿 <strong>Et si c'était le moment de respirer autrement ?</strong></p>
+                <p style="font-size: 1.1rem; margin-bottom: 40px;">Vous n'avez pas besoin de <em>plus</em>. Vous avez besoin de mieux.<br>
+                Mieux vous comprendre. Mieux vous entourer. Mieux vous recentrer.</p>
+                
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">🎯 15 minutes pour voir clair et décider en conscience.</p>
+                
+                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" class="cta-button">Prenez rendez-vous pour un échange personnalisé</a>
+                <p style="margin-top: 20px;">Pour faire le point, respirer un peu, et valider si EK!NOX est votre prochain cap.</p>
+            </div>
+
+            <div style="text-align: center; font-size: 1.3rem; margin: 60px 0;">
+                <p><strong>EK!NOX</strong></p>
+                <p>Un espace pour se réguler.</p>
+                <p>Un collectif pour se redresser.</p>
+                <p>Un programme pour se redéployer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2>❓Foire Aux Questions -- EK!NOX</h2>
             
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    🟡 Puis-je faire financer le programme ?
-                </div>
-                <div class="faq-answer">
-                    <p>Le programme est éligible au financement en entreprise dans le cadre du développement des compétences managériales. Une convention de formation peut être fournie sur demande. N'hésitez pas à me contacter pour en parler.</p>
-                </div>
+            <div class="faq">
+                <h4>🟡 À qui s'adresse EK!NOX ?</h4>
+                <p>EK!NOX s'adresse aux décideurs, entrepreneurs, dirigeants et managers qui veulent retrouver de la clarté, de l'énergie et de l'alignement dans leur posture.<br>
+                Hommes ou femmes, ce programme est conçu pour ceux qui veulent conjuguer performance et justesse intérieure, sans sacrifier leur santé mentale, leur vision ou leur authenticité.</p>
+            </div>
+
+            <div class="faq">
+                <h4>🟡 Je ne suis pas "en burn-out", est-ce que c'est pour moi ?</h4>
+                <p>Absolument. EK!NOX n'est pas un programme de "réparation", mais d'expansion.<br>
+                C'est un reset stratégique pour celles et ceux qui sentent qu'ils peuvent aller plus loin... sans s'y perdre. Il est pensé pour prévenir plutôt que guérir, et poser les fondations d'un leadership aligné et pérenne.</p>
+            </div>
+
+            <div class="faq">
+                <h4>🟡 Pourquoi un format mixte ?</h4>
+                <p>Parce que les défis du leadership ne sont pas genrés.<br>
+                Le programme accueille désormais des profils variés pour enrichir l'intelligence collective. Chacun vient avec son vécu, ses défis, et repart avec plus de recul, de puissance et d'humanité.<br>
+                L'énergie du groupe repose sur le respect, l'écoute et la confidentialité.</p>
+            </div>
+
+            <div class="faq">
+                <h4>🟡 Comment se déroule le programme ?</h4>
+                <p>EK!NOX démarre par 3 jours de stage immersif (en résidentiel), pour créer un déclic puissant et amorcer une vraie transformation.<br>
+                Puis, 4 séances de 2 heures coaching de groupe en présentiel, en mode codeveloppement, sont réparties sur l'année (1 par trimestre), pour ancrer les changements et accompagner les passages-clés de ton année professionnelle.</p>
+            </div>
+
+            <div class="faq">
+                <h4>🟡 Est-ce que je peux participer si je suis très pris.e par mon activité ?</h4>
+                <p>Justement : EK!NOX est pensé pour les leaders débordés.<br>
+                Le stage vous permet une déconnexion totale et stratégique. Les sessions de suivi trimestrielles sont pensées pour être courtes, denses et efficaces. C'est un investissement de temps... pour en regagner beaucoup ensuite.</p>
+            </div>
+
+            <div class="faq">
+                <h4>🟡 Que vais-je concrètement retirer de ce programme ?</h4>
+                <ul style="margin: 15px 0;">
+                    <li>✔ Une posture plus claire et affirmée.</li>
+                    <li>✔ Une capacité à prendre des décisions en étant aligné.e.</li>
+                    <li>✔ Moins de dispersion mentale, plus de focus.</li>
+                    <li>✔ Une meilleure relation à ton énergie, à ton temps et à ton entourage.</li>
+                    <li>✔ Un cadre confidentiel et stimulant pour penser différemment.</li>
+                    <li>✔ Des outils concrets et des déclics durables.</li>
+                </ul>
+            </div>
+
+            <div class="faq">
+                <h4>🟡 Y aura-t-il un avant/après ?</h4>
+                <p>Oui et à votre manière.<br>
+                Certain.e.s repartent avec une nouvelle posture, d'autres avec une décision clé, d'autres encore avec une reconnexion à leur puissance oubliée. Ce programme transforme.<br><br>
+                Ce qui en ressort dépendra aussi de ce que vous y mettez.</p>
+            </div>
+
+            <div class="faq">
+                <h4>🟡 Puis-je faire financer le programme ?</h4>
+                <p>Le programme est éligible au financement en entreprise dans le cadre du développement des compétences managériales.<br>
+                Une convention de formation peut être fournie sur demande. N'hésite pas à me contacter pour en parler.</p>
+            </div>
+
+            <div style="text-align: center; margin: 60px 0;">
+                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" class="cta-button">👉 Prennez rendez-vous pour savoir si EKINOX est pour vous.</a>
+                <p style="margin-top: 30px; font-size: 1.1rem;">Démarrage du programme : Bootcamp du 25 au 27 septembre 2025 + suivi collectif dès décembre.</p>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta" id="reservation">
+    <section class="hero" style="padding: 60px 0;">
         <div class="container">
-            <h2>✦ Prêt.e à rejoindre l'aventure EK!NOX ?</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 3rem;">
-                Faites le choix qui vous correspond et libérez enfin votre potentiel de leader !
-            </p>
+            <p style="font-size: 1.3rem; margin-bottom: 20px;">✨ <strong>Rejoignez une expérience unique pour vous reconnecter à votre puissance et redéfinir votre leadership.</strong></p>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">🌿 Offrez-vous ce temps précieux, dans un cadre d'exception, pour reprendre les commandes avec clarté et sérénité.</p>
             
-            <div class="cta-buttons">
-                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" target="_blank" class="btn btn-primary">
-                    <span class="btn-icon">📞</span>
-                    Parlons de votre transformation
-                </a>
+            <p style="font-size: 1.3rem; margin-bottom: 30px;">🎯 <strong>Prêt·e à transformer votre énergie et votre posture ?</strong></p>
+            
+            <div style="margin: 40px 0;">
+                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" class="cta-button" style="margin: 10px;">📆 Réservez votre place dès maintenant</a>
+                <br><br>
+                <a href="https://calendly.com/zorica-pro/ekinox-bootcamp" class="cta-button" style="margin: 10px;">🧭 Appel découverte de 15 minutes</a>
             </div>
+            
+            <p style="font-size: 1.1rem; margin-top: 30px;">pour explorer ensemble si EK!NOX est la prochaine étape qu'il vous faut.</p>
         </div>
     </section>
 
-    <script>
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const isActive = answer.classList.contains('active');
-            
-            // Close all FAQ answers
-            document.querySelectorAll('.faq-answer').forEach(ans => {
-                ans.classList.remove('active');
-            });
-            
-            // Open clicked one if it wasn't active
-            if (!isActive) {
-                answer.classList.add('active');
-            }
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll animation for elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.benefit-card, .testimonial, .pricing-card, .phase-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
