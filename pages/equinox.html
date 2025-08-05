@@ -149,6 +149,33 @@
             font-size: 1.2rem;
         }
 
+        .video-container {
+            position: relative;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .comparison-table {
             background: #FDFBF9;
             border-radius: 15px;
@@ -412,33 +439,6 @@
             margin-bottom: 1rem;
         }
 
-        .video-container {
-            position: relative;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .video-wrapper {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .video-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
         .features-list {
             list-style: none;
             padding: 0;
@@ -488,6 +488,21 @@
                     <p><strong>Et si votre fatigue … n'était pas un signe de faiblesse mais un signal stratégique ?</strong></p>
                     <p>Vous n'êtes pas à rebâtir, vous êtes à reconnecter.</p>
                     <p><span class="highlight-text">EK!NOX est votre bouffée d'oxygène pour retrouver votre puissance, en pleine conscience, sans lutter ni surperformer : Bootcamp + coaching d'élite.</span></p>
+                </div>
+
+                <!-- Section vidéo -->
+                <div class="video-container">
+                    <h3 style="color: #4E2C54; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">🎬 Découvrez EK!NOX en vidéo</h3>
+                    <div class="video-wrapper">
+                        <video 
+                            controls 
+                            poster="https://zorica.pro/images/zorica-4.jpg"
+                            preload="metadata">
+                            <source src="https://zorica.pro/uploads/videos/zorica.mp4" type="video/mp4">
+                            <p>Votre navigateur ne supporte pas la lecture de vidéos HTML5. <a href="https://zorica.pro/uploads/videos/zorica.mp4" target="_blank">Télécharger la vidéo</a></p>
+                        </video>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 1rem; color: #A18FCF; font-style: italic;">▶ Cliquez sur la vidéo pour découvrir l'approche EK!NOX avec Zorica</p>
                 </div>
             </section>
 
