@@ -412,6 +412,33 @@
             margin-bottom: 1rem;
         }
 
+        .video-container {
+            position: relative;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .features-list {
             list-style: none;
             padding: 0;
@@ -437,6 +464,7 @@
     <header>
         <div class="container">
             <div class="header-content">
+                <img src="https://zorica.pro/images/logo-EKINOX.jpg" alt="Logo EK!NOX" style="max-width: 200px; height: auto; margin-bottom: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                 <h1 class="hero-title">✦ EK!NOX ✦</h1>
                 <p class="hero-subtitle">12 mois pour retrouver une posture d'impact<br>sans vous trahir, ni surperformer.</p>
                 <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Programme stratégique pour leaders lucides mais essoufflés<br>en quête de sens, d'énergie et de cohérence.</p>
