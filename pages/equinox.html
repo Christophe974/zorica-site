@@ -24,11 +24,21 @@
             padding: 0 20px;
         }
 
+        /* Variables pour harmoniser les espacements */
+        :root {
+            --section-spacing: 4rem;
+            --element-spacing: 2rem;
+            --small-spacing: 1rem;
+            --card-padding: 2rem;
+            --border-radius: 15px;
+            --large-border-radius: 20px;
+        }
+
         /* Header */
         header {
             background: linear-gradient(135deg, #A18FCF 0%, #4E2C54 100%);
             color: #FDFBF9;
-            padding: 2rem 0;
+            padding: var(--element-spacing) 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -53,13 +63,13 @@
         .hero-title {
             font-size: 3.5rem;
             font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: var(--small-spacing);
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: var(--element-spacing);
             opacity: 0.9;
         }
 
@@ -67,7 +77,7 @@
             display: inline-block;
             background: #D6B98C;
             color: #4E2C54;
-            padding: 1rem 2rem;
+            padding: var(--small-spacing) var(--element-spacing);
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
@@ -84,18 +94,18 @@
 
         /* Main content */
         main {
-            padding: 4rem 0;
+            padding: var(--section-spacing) 0;
         }
 
         .section {
-            margin-bottom: 4rem;
-            padding: 3rem 0;
+            margin-bottom: var(--section-spacing);
+            padding: 0;
         }
 
         .section-title {
             font-size: 2.5rem;
             color: #4E2C54;
-            margin-bottom: 2rem;
+            margin-bottom: var(--element-spacing);
             text-align: center;
             position: relative;
         }
@@ -106,23 +116,28 @@
             width: 80px;
             height: 3px;
             background: #A18FCF;
-            margin: 1rem auto;
+            margin: var(--small-spacing) auto;
             border-radius: 2px;
         }
 
-        .intro-section {
+        /* Sections harmonisées */
+        .intro-section,
+        .exploration-section,
+        .testimonials,
+        .pricing-section,
+        .cta-final {
             background: linear-gradient(135deg, #FDFBF9 0%, #F5F1F9 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 4rem;
+            border-radius: var(--large-border-radius);
+            padding: var(--card-padding);
+            margin-bottom: var(--section-spacing);
             position: relative;
         }
 
         .coach-intro {
             display: flex;
             align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: var(--element-spacing);
+            margin-bottom: var(--element-spacing);
             flex-wrap: wrap;
         }
 
@@ -151,7 +166,7 @@
 
         .video-container {
             position: relative;
-            margin: 3rem 0;
+            margin: var(--element-spacing) 0;
             text-align: center;
         }
 
@@ -159,7 +174,7 @@
             position: relative;
             max-width: 800px;
             margin: 0 auto;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             transition: transform 0.3s ease;
@@ -176,14 +191,6 @@
             display: block;
         }
 
-        .exploration-section {
-            background: linear-gradient(135deg, #F5F1F9 0%, #FDFBF9 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 3rem 0;
-            position: relative;
-        }
-
         .exploration-content {
             max-width: 900px;
             margin: 0 auto;
@@ -192,13 +199,13 @@
         .exploration-list {
             list-style: none;
             padding: 0;
-            margin: 2rem 0;
+            margin: var(--element-spacing) 0;
         }
 
         .exploration-list li {
-            padding: 1rem 0;
+            padding: var(--small-spacing) 0;
             position: relative;
-            padding-left: 2rem;
+            padding-left: var(--element-spacing);
             font-size: 1.1rem;
             line-height: 1.7;
         }
@@ -213,18 +220,18 @@
 
         .exploration-footer {
             text-align: center;
-            margin-top: 2rem;
-            padding: 2rem;
+            margin-top: var(--element-spacing);
+            padding: var(--element-spacing);
             background: rgba(161, 143, 207, 0.1);
-            border-radius: 15px;
+            border-radius: var(--border-radius);
         }
 
         .comparison-table {
             background: #FDFBF9;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 3rem 0;
+            margin: var(--element-spacing) 0;
         }
 
         .comparison-table table {
@@ -262,14 +269,14 @@
         .program-phases {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 3rem 0;
+            gap: var(--element-spacing);
+            margin: var(--element-spacing) 0;
         }
 
         .phase-card {
             background: #FDFBF9;
-            border-radius: 20px;
-            padding: 2rem;
+            border-radius: var(--large-border-radius);
+            padding: var(--card-padding);
             box-shadow: 0 10px 30px rgba(161, 143, 207, 0.2);
             border: 2px solid #A18FCF;
             transition: transform 0.3s ease;
@@ -282,15 +289,15 @@
         .phase-title {
             color: #4E2C54;
             font-size: 1.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: var(--small-spacing);
             text-align: center;
         }
 
         .phase-images {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
+            gap: var(--small-spacing);
+            margin: var(--small-spacing) 0;
         }
 
         .phase-image {
@@ -310,30 +317,23 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            margin: 1rem 0;
-        }
-
-        .testimonials {
-            background: linear-gradient(135deg, #F5F1F9 0%, #FDFBF9 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 3rem 0;
+            margin: var(--small-spacing) 0;
         }
 
         .testimonial {
             background: #FDFBF9;
             border-left: 4px solid #A18FCF;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: var(--small-spacing) 0;
             border-radius: 0 10px 10px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 1rem;
+            margin-bottom: var(--small-spacing);
             line-height: 1.7;
         }
 
@@ -346,17 +346,14 @@
         .pricing-section {
             background: linear-gradient(135deg, #4E2C54 0%, #A18FCF 100%);
             color: #FDFBF9;
-            border-radius: 20px;
-            padding: 3rem;
             text-align: center;
-            margin: 3rem 0;
         }
 
         .price-box {
             background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
+            border-radius: var(--border-radius);
+            padding: var(--card-padding);
+            margin: var(--element-spacing) 0;
             backdrop-filter: blur(10px);
         }
 
@@ -370,13 +367,13 @@
             font-size: 2.5rem;
             font-weight: bold;
             color: #D6B98C;
-            margin: 1rem 0;
+            margin: var(--small-spacing) 0;
         }
 
         .offer-badge {
             background: #D6B98C;
             color: #4E2C54;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem var(--small-spacing);
             border-radius: 25px;
             font-weight: bold;
             display: inline-block;
@@ -384,13 +381,13 @@
         }
 
         .faq-section {
-            margin: 4rem 0;
+            margin: var(--section-spacing) 0;
         }
 
         .faq-item {
             background: #FDFBF9;
             border-radius: 10px;
-            margin: 1rem 0;
+            margin: var(--small-spacing) 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             overflow: hidden;
         }
@@ -417,18 +414,95 @@
             background: linear-gradient(135deg, #D6B98C 0%, #A18FCF 100%);
             color: #4E2C54;
             text-align: center;
-            padding: 4rem 2rem;
-            border-radius: 20px;
-            margin: 4rem 0;
         }
 
         .cta-final h2 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: var(--element-spacing);
+        }
+
+        /* Cards et contenus harmonisés */
+        .content-card {
+            background: #FDFBF9;
+            border-radius: var(--border-radius);
+            padding: var(--card-padding);
+            margin: var(--element-spacing) 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .highlight-card {
+            background: rgba(161, 143, 207, 0.1);
+            border-radius: var(--border-radius);
+            padding: var(--card-padding);
+            margin: var(--element-spacing) 0;
+        }
+
+        .program-content {
+            background: #F9F7F5;
+            border-radius: var(--border-radius);
+            padding: var(--card-padding);
+            margin: var(--element-spacing) 0;
+        }
+
+        .day-program {
+            background: #FDFBF9;
+            border-left: 4px solid #A18FCF;
+            padding: 1.5rem;
+            margin: var(--small-spacing) 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .day-title {
+            color: #4E2C54;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: var(--small-spacing);
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--small-spacing) 0;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: var(--element-spacing);
+        }
+
+        .features-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #A18FCF;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Spacing harmonisé pour tous les éléments textuels */
+        p, ul, ol {
+            margin-bottom: var(--small-spacing);
+        }
+
+        h3 {
+            margin-bottom: var(--small-spacing);
+            margin-top: var(--element-spacing);
+        }
+
+        h4, h5 {
+            margin-bottom: calc(var(--small-spacing) * 0.75);
+            margin-top: var(--small-spacing);
         }
 
         /* Responsive design */
         @media (max-width: 768px) {
+            :root {
+                --section-spacing: 3rem;
+                --element-spacing: 1.5rem;
+                --card-padding: 1.5rem;
+            }
+            
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -458,48 +532,6 @@
             .comparison-table td {
                 padding: 1rem 0.5rem;
             }
-        }
-
-        .program-content {
-            background: #F9F7F5;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .day-program {
-            background: #FDFBF9;
-            border-left: 4px solid #A18FCF;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .day-title {
-            color: #4E2C54;
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .features-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .features-list li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .features-list li::before {
-            content: '✔';
-            position: absolute;
-            left: 0;
-            color: #A18FCF;
-            font-weight: bold;
-            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -533,14 +565,10 @@
                     <p><span class="highlight-text">EK!NOX est votre bouffée d'oxygène pour retrouver votre puissance, en pleine conscience, sans lutter ni surperformer : Bootcamp + coaching d'élite.</span></p>
                 </div>
 
-                <!-- Section vidéo -->
                 <div class="video-container">
                     <h3 style="color: #4E2C54; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">🎬 Découvrez EK!NOX en vidéo</h3>
                     <div class="video-wrapper">
-                        <video 
-                            controls 
-                            poster="https://zorica.pro/images/zorica-4.jpg"
-                            preload="metadata">
+                        <video controls poster="https://zorica.pro/images/zorica-4.jpg" preload="metadata">
                             <source src="https://zorica.pro/uploads/videos/zorica.mp4" type="video/mp4">
                             <p>Votre navigateur ne supporte pas la lecture de vidéos HTML5. <a href="https://zorica.pro/uploads/videos/zorica.mp4" target="_blank">Télécharger la vidéo</a></p>
                         </video>
@@ -551,8 +579,8 @@
 
             <section class="section">
                 <h2 class="section-title">✦ Pour qui ?</h2>
-                <div style="background: #F9F7F5; border-radius: 15px; padding: 2rem; text-align: center;">
-                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">EK!NOX s'adresse aux entrepreneurs, dirigeants et managers :</p>
+                <div class="content-card">
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem; text-align: center;">EK!NOX s'adresse aux entrepreneurs, dirigeants et managers :</p>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0;">
                         <div style="background: #FDFBF9; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                             <strong>engagés mais épuisés</strong>
@@ -564,18 +592,10 @@
                             <strong>brillants mais à bout de souffle</strong>
                         </div>
                     </div>
-                    <p style="font-size: 1.1rem; color: #4E2C54; font-style: italic;">Vous êtes toujours là pour les autres… mais quand est-ce que quelqu'un est là pour vous ?</p>
+                    <p style="font-size: 1.1rem; color: #4E2C54; font-style: italic; text-align: center;">Vous êtes toujours là pour les autres… mais quand est-ce que quelqu'un est là pour vous ?</p>
                 </div>
 
-                <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 10px;">
-                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">✨ Rejoignez une expérience unique pour vous reconnecter à votre puissance et redéfinir votre leadership.</p>
-                    <p style="font-size: 1.1rem;">🌿 Offrez-vous ce temps précieux, dans un cadre d'exception, pour reprendre les commandes avec clarté et sérénité.</p>
-                    <p style="font-size: 1.1rem; margin-top: 2rem; font-style: italic;">Au plaisir de vous accompagner.</p>
-                </div>
-            </section>
-        </div>
-    </main>
-
+                <div class="highlight-card">
                     <h3 style="color: #4E2C54; font-size: 1.5rem; margin-bottom: 1rem;">🎯 Des signaux que vous ne pouvez plus ignorer :</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="padding: 0.5rem 0; font-size: 1.1rem;">• Hyperactivité constante, surcharge mentale, dispersion.</li>
@@ -595,7 +615,6 @@
                 </div>
             </section>
 
-            <!-- NOUVELLE SECTION AJOUTÉE -->
             <section class="exploration-section">
                 <h2 class="section-title">✦ Ce que nous explorons ensemble</h2>
                 <div class="exploration-content">
@@ -683,7 +702,7 @@
                     </table>
                 </div>
 
-                <div style="text-align: center; font-size: 1.2rem; color: #4E2C54; font-weight: bold; margin: 2rem 0; padding: 2rem; background: #F9F7F5; border-radius: 15px;">
+                <div class="highlight-card" style="text-align: center; font-size: 1.2rem; color: #4E2C54; font-weight: bold;">
                     Brisez les attentes. Débarrassez-vous du poids des autres, sans culpabiliser. Votre authenticité est votre force.
                 </div>
             </section>
@@ -694,13 +713,15 @@
                     <strong>12 mois d'accompagnement puissant, pour leaders engagés</strong>
                 </p>
 
-                <ul class="features-list" style="background: #F9F7F5; padding: 2rem; border-radius: 15px; margin-bottom: 3rem;">
-                    <li><strong>3 jours d'immersion transformative</strong></li>
-                    <li><strong>4 demies-journée de sessions collectives sur 1 an</strong></li>
-                    <li><strong>Un groupe élite de pairs pour des partages stratégiques</strong></li>
-                    <li><strong>Accès à des ressources exclusives</strong></li>
-                    <li><strong>Hébergement & confort total inclus</strong></li>
-                </ul>
+                <div class="content-card">
+                    <ul class="features-list">
+                        <li><strong>3 jours d'immersion transformative</strong></li>
+                        <li><strong>4 demies-journée de sessions collectives sur 1 an</strong></li>
+                        <li><strong>Un groupe élite de pairs pour des partages stratégiques</strong></li>
+                        <li><strong>Accès à des ressources exclusives</strong></li>
+                        <li><strong>Hébergement & confort total inclus</strong></li>
+                    </ul>
+                </div>
 
                 <h3 style="color: #4E2C54; font-size: 2rem; text-align: center; margin: 3rem 0;">🚀 Programme en 2 phases :</h3>
 
@@ -720,9 +741,9 @@
                             3 jours hors du tumulte, une coupure radicale, une immersion puissante pour une reconnexion à vous-même et aux leviers de votre énergie.
                         </p>
                         
-                        <p style="margin: 1rem 0;">Dans un lieu inspirant, avec un petit groupe de décideurs (6 à 8 personnes max).</p>
+                        <p>Dans un lieu inspirant, avec un petit groupe de décideurs (6 à 8 personnes max).</p>
                         
-                        <div style="background: #FDFBF9; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                        <div class="content-card">
                             <strong>Objectif :</strong>
                             <ul style="margin-top: 1rem; padding-left: 1.5rem;">
                                 <li>Clarifier son cap personnel et professionnel</li>
@@ -772,7 +793,7 @@
                             Vous n'êtes pas livré.e.s à vous-même après l'immersion.
                         </p>
 
-                        <div style="background: #FDFBF9; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                        <div class="content-card">
                             <strong>4 sessions collectives : Les Cercles d'Impact des Décideurs</strong><br>
                             <em>(1 demie-journée par trimestre)</em>
                             
@@ -784,7 +805,7 @@
                             </ul>
                         </div>
 
-                        <div style="background: #F9F7F5; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                        <div class="highlight-card">
                             <strong>Objectif :</strong>
                             <ul style="margin-top: 1rem; padding-left: 1.5rem;">
                                 <li>Ancrer les transformations, élévation continue</li>
@@ -800,35 +821,35 @@
 
             <section class="section">
                 <h2 class="section-title">✦ Qui je suis — et la genèse d'EK!NOX</h2>
-                <div style="background: #F9F7F5; border-radius: 15px; padding: 3rem;">
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                <div class="content-card">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
                         Je m'appelle <strong>Zorica Vucic</strong>.<br>
                         Coach professionnelle certifiée, formatrice en posture professionnelle et intelligence relationnelle, et fondatrice du programme EK!NOX.
                     </p>
                     
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
                         <strong>25 ans de terrain</strong> au cœur des RH et du pilotage exécutif dans des secteurs exigeants : industrie, BTP, transports, santé et conseil.
                     </p>
 
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
                         J'ai longtemps cru qu'il fallait être irréprochable pour réussir. Brillante, solide, stratégique, sans failles. Issue de l'immigration, j'ai grandi avec ce message silencieux : <em>il faut faire deux fois plus pour avoir moitié moins</em>.
                     </p>
 
-                    <div style="background: linear-gradient(135deg, #A18FCF 0%, #D6B98C 100%); color: #4E2C54; padding: 2rem; border-radius: 10px; margin: 2rem 0; text-align: center;">
+                    <div class="highlight-card" style="text-align: center;">
                         <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">✨ C'est là qu'est né EK!NOX.</h3>
                         <p style="font-size: 1.1rem;">Pas d'un concept, mais d'un basculement, d'une nécessité.</p>
                     </div>
 
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
                         J'ai compris qu'on peut être ambitieuse, exigeante, engagée… sans s'épuiser, sans se suradapter, sans se perdre.
                     </p>
 
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
                         En 2020, je créé ma propre entreprise et depuis j'ai accompagné <strong>plus de 80 dirigeants</strong>, formé <strong>plus de 400 professionnels</strong> à retrouver clarté, puissance et justesse dans des contextes tendus, mouvants, complexes.
                     </p>
 
-                    <div style="background: #FDFBF9; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid #A18FCF;">
-                        <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Et à chaque fois, la même problématique revenait :</strong></p>
+                    <div class="content-card" style="border-left: 4px solid #A18FCF;">
+                        <p style="font-size: 1.1rem;"><strong>Et à chaque fois, la même problématique revenait :</strong></p>
                         <ul style="list-style: none; padding: 0;">
                             <li style="margin: 0.5rem 0; font-style: italic;">« J'ai la tête pleine, mais plus d'espace pour respirer. »</li>
                             <li style="margin: 0.5rem 0; font-style: italic;">« Je n'ose plus dire ce que je pense. »</li>
@@ -836,7 +857,7 @@
                         </ul>
                     </div>
 
-                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; text-align: center; color: #4E2C54; font-weight: bold;">
+                    <p style="font-size: 1.2rem; line-height: 1.8; text-align: center; color: #4E2C54; font-weight: bold;">
                         Ce que mes clients cherchaient sans le trouver — je l'ai créé.
                     </p>
 
@@ -846,8 +867,8 @@
                         <p style="font-size: 1.3rem; color: #A18FCF; margin: 0.5rem 0;">🌀 Un programme intensif de décompression et de transformation.</p>
                     </div>
 
-                    <div style="background: #FDFBF9; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
-                        <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Un espace rare, vivant, où l'on peut :</strong></p>
+                    <div class="content-card">
+                        <p style="font-size: 1.1rem;"><strong>Un espace rare, vivant, où l'on peut :</strong></p>
                         <ul class="features-list">
                             <li>Déposer les masques</li>
                             <li>Se reconnecter à son cap intérieur</li>
@@ -855,7 +876,7 @@
                         </ul>
                     </div>
 
-                    <div style="text-align: center; padding: 2rem; margin: 2rem 0;">
+                    <div style="text-align: center; padding: 2rem;">
                         <p style="font-size: 1.2rem; line-height: 1.8; color: #4E2C54;">
                             EK!NOX, ce n'est pas du développement personnel à enrobage corporate.<br>
                             Ce n'est pas une méthode miracle, ni une recette en 5 étapes.<br><br>
@@ -865,17 +886,17 @@
                         </p>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #4E2C54 0%, #A18FCF 100%); color: #FDFBF9; padding: 2rem; border-radius: 10px; text-align: center; margin: 2rem 0;">
+                    <div class="highlight-card" style="text-align: center;">
                         <p style="font-size: 1.3rem; margin-bottom: 1rem;">🌱 C'est ce que j'aurais aimé vivre plus tôt.</p>
                         <p style="font-size: 1.1rem;">Aujourd'hui, je le transmets — avec foi, avec joie… et peut-être avec vous.</p>
                     </div>
 
-                    <div style="text-align: center; margin: 2rem 0;">
-                        <p style="font-size: 1.2rem; color: #4E2C54; margin: 1rem 0;">🎯 Vous n'avez pas à choisir entre ambition et sérénité.</p>
-                        <p style="font-size: 1.2rem; color: #4E2C54; margin: 1rem 0;">🧭 Faites de votre posture votre plus grand levier d'influence.</p>
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.2rem; color: #4E2C54;">🎯 Vous n'avez pas à choisir entre ambition et sérénité.</p>
+                        <p style="font-size: 1.2rem; color: #4E2C54;">🧭 Faites de votre posture votre plus grand levier d'influence.</p>
                     </div>
 
-                    <div style="background: #FDFBF9; padding: 2rem; border-radius: 10px; text-align: center;">
+                    <div class="content-card" style="text-align: center;">
                         <p style="font-size: 1.1rem; color: #4E2C54; line-height: 1.8;">
                             <strong>🎯 EK!NOX incarne tout ce que j'ai voulu offrir en mieux :</strong><br>
                             de la profondeur, du cadre, de l'expérience vécue, de l'intelligence collective… et une reconnexion puissante à soi.
@@ -886,7 +907,7 @@
 
             <section class="testimonials">
                 <h2 class="section-title">✦ Témoignages</h2>
-                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #4E2C54;">
+                <p style="text-align: center; font-size: 1.2rem; color: #4E2C54;">
                     <strong>🎯 100 % des clients accompagnés depuis 2020 témoignent d'un avant/après concret et durable :</strong>
                 </p>
 
@@ -928,22 +949,22 @@
 
             <section class="section">
                 <h2 class="section-title">📆 Prochaine session EKINOX</h2>
-                <div style="background: #F9F7F5; border-radius: 15px; padding: 3rem; text-align: center;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
-                        <div style="background: #FDFBF9; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            <h4 style="color: #4E2C54; margin-bottom: 1rem;">📍 Lieu</h4>
+                <div class="content-card" style="text-align: center;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div class="content-card">
+                            <h4 style="color: #4E2C54;">📍 Lieu</h4>
                             <p>Vosges : Hébergement de standing avec équipements bien-être (spa, sauna, piscine couverte et bain à remous, restaurant gastronomique)</p>
                         </div>
-                        <div style="background: #FDFBF9; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            <h4 style="color: #4E2C54; margin-bottom: 1rem;">📅 Dates</h4>
+                        <div class="content-card">
+                            <h4 style="color: #4E2C54;">📅 Dates</h4>
                             <p><strong>Du Jeudi 25 au samedi 27 septembre 2025</strong></p>
                         </div>
-                        <div style="background: #FDFBF9; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            <h4 style="color: #4E2C54; margin-bottom: 1rem;">🕐 Horaires</h4>
+                        <div class="content-card">
+                            <h4 style="color: #4E2C54;">🕐 Horaires</h4>
                             <p>de 9h à 12h00 et de 13h30 à 17h</p>
                         </div>
                     </div>
-                    <p style="margin: 2rem 0; font-size: 1.1rem; color: #4E2C54;">
+                    <p style="font-size: 1.1rem; color: #4E2C54;">
                         <strong>Démarrage du programme :</strong> bootcamp immersif en septembre + suivi collectif dès décembre.
                     </p>
                     <a href="https://calendly.com/a-to-z/visio-ek-nox-15-min-pour-un-choix-eclaire-clone?month=2025-08" class="cta-button" target="_blank">👉 JE RÉSERVE MON APPEL DÉCOUVERTE</a>
@@ -954,13 +975,13 @@
             <section class="pricing-section">
                 <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">✦ Tarif : 1 seule formule « All inclusive » !</h2>
                 
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                <p style="font-size: 1.2rem; opacity: 0.9;">
                     Vous avez l'habitude d'investir dans votre entreprise, pour vos équipes ou votre famille :<br>
                     <strong>Quand avez-vous investi pour vous la dernière fois ?</strong>
                 </p>
 
                 <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 2rem; margin: 2rem 0;">
-                    <p style="margin-bottom: 2rem;">Nous savons que les décideurs ont besoin d'un moment pour souffler vraiment, sans se préoccuper de la logistique et vous garantir énergie et concentration.</p>
+                    <p>Nous savons que les décideurs ont besoin d'un moment pour souffler vraiment, sans se préoccuper de la logistique et vous garantir énergie et concentration.</p>
                     <p><strong>C'est pourquoi EK!NOX vous propose une formule All Inclusive :</strong> profitez d'une expérience complète, immersive et confortable avec hébergement inclus.</p>
                 </div>
 
@@ -973,7 +994,7 @@
                 </ul>
 
                 <div class="price-box">
-                    <div style="margin-bottom: 2rem;">
+                    <div>
                         <span class="original-price">Tarif normal = 2 475 € HT (2 970 € TTC)</span>
                     </div>
 
@@ -1061,11 +1082,9 @@
                 </div>
             </section>
 
-         
-
             <section class="cta-final">
                 <h2>🎯 Prêt·e à transformer votre énergie et votre posture ?</h2>
-                <p style="font-size: 1.2rem; margin: 2rem 0;">
+                <p style="font-size: 1.2rem;">
                     <strong>Vous n'avez pas besoin de plus. Vous avez besoin de mieux.</strong><br>
                     Mieux vous comprendre. Mieux vous entourer. Mieux vous recentrer.
                 </p>
@@ -1075,22 +1094,22 @@
                     <p style="margin-top: 1rem; font-size: 1rem;">15 minutes pour voir clair et décider en conscience</p>
                 </div>
 
-                <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 10px; margin: 2rem 0; backdrop-filter: blur(5px);">
-                    <p style="margin: 0.5rem 0;"><strong>Démarrage du programme :</strong> Bootcamp du 25 au 27 septembre 2025 + suivi collectif dès décembre.</p>
-                    <p style="margin: 0.5rem 0;"><strong>Offre early bird jusqu'au 25 août :</strong> 1 899 € HT, puis 2 106 € HT (offre 1ère cohorte) (au lieu de 2 475 € HT à partir de la cohorte d'octobre)</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 10px; backdrop-filter: blur(5px);">
+                    <p><strong>Démarrage du programme :</strong> Bootcamp du 25 au 27 septembre 2025 + suivi collectif dès décembre.</p>
+                    <p><strong>Offre early bird jusqu'au 25 août :</strong> 1 899 € HT, puis 2 106 € HT (offre 1ère cohorte) (au lieu de 2 475 € HT à partir de la cohorte d'octobre)</p>
                 </div>
 
-                <div style="margin: 3rem 0; font-size: 1.3rem; line-height: 1.8;">
+                <div style="font-size: 1.3rem; line-height: 1.8;">
                     <p><strong>EK!NOX</strong></p>
                     <p>Un espace pour vous réguler.</p>
                     <p>Un collectif pour se redresser.</p>
                     <p>Un programme pour vous redéployer.</p>
                 </div>
 
-                <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 10px;">
-                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">✨ Rejoignez une expérience unique pour vous reconnecter à votre puissance et redéfinir votre leadership.</p>
+                <div class="highlight-card">
+                    <p style="font-size: 1.1rem;">✨ Rejoignez une expérience unique pour vous reconnecter à votre puissance et redéfinir votre leadership.</p>
                     <p style="font-size: 1.1rem;">🌿 Offrez-vous ce temps précieux, dans un cadre d'exception, pour reprendre les commandes avec clarté et sérénité.</p>
-                    <p style="font-size: 1.1rem; margin-top: 2rem; font-style: italic;">Au plaisir de vous accompagner.</p>
+                    <p style="font-size: 1.1rem; font-style: italic;">Au plaisir de vous accompagner.</p>
                 </div>
             </section>
         </div>
